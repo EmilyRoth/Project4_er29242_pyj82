@@ -83,20 +83,78 @@ public class Main {
             switch (command){
                 // Shows the world
                 case "show":
-
+                    Critter.displayWorld();
                     break;
+
                 // Determines how many time steps to run
                 case "step":
+                    if(arguments.length == 1){
+                        Critter.worldTimeStep();
+                    }
+                    else{
+                        int numOfTimes = Integer.parseInt(arguments[1]);
+                        for(int i = 0; i< numOfTimes; i++){
+                            Critter.worldTimeStep();
+                        }
+                    }
                     break;
+
                 // Set random number seed
                 case "seed":
+                    if(arguments.length == 2){
+                        int seed = Integer.parseInt(arguments[1]);
+                        Critter.setSeed(seed);
+                    }
+                    else{
+                        System.out.println("Invalid Input");
+                    }
                     break;
+
                 //make given number of critters in given class
                 case "make":
+                    if(arguments.length == 2 || arguments.length == 3){
+                        String critterClass = arguments[1];
+                        int numOfCritters;
+                        if(arguments.length == 3){
+                            numOfCritters = Integer.parseInt(arguments[2]);
+                        }
+                        else{
+                            numOfCritters = 1;
+                        }
+                        try{
+                            for(int i =0; i< numOfCritters; i++) {
+                                Critter.makeCritter(critterClass);
+                                //todo: qualified name
+                            }
+                        }
+                        catch (InvalidCritterException e){
+                            System.out.println("Invalid Input: Not a Critter Class");
+                            break;
+                        }
+
+                    }
+                    else{
+                        System.out.println("Invalid Input");
+                    }
                     break;
+
                 // displays states
                 case "stats":
+                    if(arguments.length == 2){
+                        try{
+                            Critter.getInstances(arguments[1]);
+                            //todo: qualified name and runStats
+                        }
+                        catch (InvalidCritterException e){
+                            System.out.println("Invalid Input: Not a Critter Class");
+                        }
+
+                    }
+                    else{
+                        System.out.println("Invalid Input");
+                    }
                     break;
+
                 default:
                     System.out.println("Invalid Choice");
                     break;
