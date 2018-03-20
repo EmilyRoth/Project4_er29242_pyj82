@@ -205,6 +205,7 @@ public abstract class Critter {
 			System.out.print("|");
 			for(int r = 0; r<Params.world_width; r++){
 				// check if there's a critter there
+				// method to check if theres a critter there
 			}
 			// print the end of the row
 			System.out.println("|");
@@ -217,4 +218,8 @@ public abstract class Critter {
 		}
 		System.out.println("+");
 	}
+
+	/**
+	 * TODO: Make critter method
+	 */
 }

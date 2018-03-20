@@ -12,6 +12,8 @@ package assignment4;
  * Fall 2016
  */
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
 
@@ -72,7 +74,41 @@ public class Main {
         
         System.out.println("GLHF");
         // set up the world or critter object
+        String input = kb.nextLine();
+        while(!input.equals("quit")){
+            // process commands
+            String[] arguments = input.split("\\s+");
+            String command = arguments[0];
+            // parse and put into positions
+            switch (command){
+                // Shows the world
+                case "show":
 
+                    break;
+                // Determines how many time steps to run
+                case "step":
+                    break;
+                // Set random number seed
+                case "seed":
+                    break;
+                //make given number of critters in given class
+                case "make":
+                    break;
+                // displays states
+                case "stats":
+                    break;
+                default:
+                    System.out.println("Invalid Choice");
+                    break;
+            }
+
+            // todo: method to parse it immediately to trim white space
+            // menu to do each action
+            // uses parse
+
+            // get new input
+            input = kb.nextLine();
+        }
         // loop until quit input
         // get inputs
         // display board
