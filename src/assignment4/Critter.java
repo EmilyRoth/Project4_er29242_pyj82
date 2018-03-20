@@ -13,6 +13,7 @@ package assignment4;
  */
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 /* see the PDF for descriptions of the methods and fields in this class
@@ -52,10 +53,108 @@ public abstract class Critter {
 	private int y_coord;
 	
 	protected final void walk(int direction) {
+		switch (direction){
+			// straight right (Increase X; no change Y)
+			case 0:
+				x_coord++;
+				x_coord = x_coord % Params.world_width;
+				break;
+			// Diagonally Up to the Right (Increase X; Decrease Y)
+			case 1:
+				x_coord++;
+				x_coord = x_coord % Params.world_width;
+
+				y_coord--;
+				if(y_coord < 0){
+					y_coord =+ Params.world_height;
+				}
+				break;
+			// Straight Up (No change X; Decrease Y)
+			case 2:
+				y_coord--;
+				if(y_coord < 0){
+					y_coord =+ Params.world_height;
+				}
+				break;
+			// Diagonally left Up (Decrease X; Decrease Y)
+			case 3:
+				x_coord--;
+				if(x_coord < 0){
+					x_coord =+ Params.world_width;
+				}
+
+				y_coord--;
+				if(y_coord < 0){
+					y_coord =+ Params.world_height;
+				}
+				break;
+			// Straight Left (Decrease X; no change Y)
+			case 4:
+				x_coord--;
+				if(x_coord < 0){
+					x_coord =+ Params.world_width;
+				}
+				break;
+			// Diagonally Down Left (Decrease X; Increase Y)
+			case 5:
+				x_coord--;
+				if(x_coord < 0){
+					x_coord =+ Params.world_width;
+				}
+
+				y_coord++;
+				y_coord = y_coord % Params.world_height;
+				break;
+			// Straight Down (No change X; Increase Y)
+			case 6:
+				y_coord++;
+				y_coord = y_coord % Params.world_height;
+				break;
+			// Diagonally down left (Increase X; Increase Y)
+			case 7:
+				x_coord++;
+				x_coord = x_coord % Params.world_width;
+
+				y_coord++;
+				y_coord = y_coord % Params.world_height;
+				break;
+			// Will never be default if random number is set up properly
+			default:
+				break;
+		}
+
 	}
 	
 	protected final void run(int direction) {
-		
+		switch (direction) {
+			// straight right (Increase X; no change Y)
+			case 0:
+				break;
+			// Diagonally Up to the Right (Increase X; Decrease Y)
+			case 1:
+				break;
+			// Straight Up (No change X; Decrease Y)
+			case 2:
+				break;
+			// Diagonally left Up (Decrease X; Decrease Y)
+			case 3:
+				break;
+			// Straight Left (Decrease X; no change Y)
+			case 4:
+				break;
+			// Diagonally Down Left (Decrease X; Increase Y)
+			case 5:
+				break;
+			// Straight Down (No change X; Increase Y)
+			case 6:
+				break;
+			// Diagonally down left (Increase X; Increase Y)
+			case 7:
+				break;
+			// Will never be default if random number is set up properly
+			default:
+				break;
+		}
 	}
 	
 	protected final void reproduce(Critter offspring, int direction) {
@@ -76,9 +175,13 @@ public abstract class Critter {
 	 */
 	public static void makeCritter(String critter_class_name) throws InvalidCritterException {
 		try {
-			Class<TestCritter> new_class = (Class<TestCritter>) Class.forName(critter_class_name);
-			TestCritter critterNew = new_class.newInstance();
+			String qualifiedName = myPackage.toString() + "." + critter_class_name;
+			Class<Critter> new_class = (Class<Critter>) Class.forName(qualifiedName);
+			Critter critterNew = new_class.newInstance();
 			// when new critter is created, does it go into population or babies?
+			// ARE WE ALLOWED TO DO THIS
+			critterNew.x_coord = (rand.nextInt(Params.world_width));
+			critterNew.y_coord = (rand.nextInt(Params.world_height));
 			population.add(critterNew);
 		}catch (ClassNotFoundException e){
 			//Figure out what to do here
@@ -188,6 +291,9 @@ public abstract class Critter {
 	public static void worldTimeStep() {
 		// Complete this method.
 		// iterate through every creature to do time step
+		for(Critter crit : population){
+			crit.doTimeStep();
+		}
 	}
 	
 	public static void displayWorld() {
@@ -203,9 +309,23 @@ public abstract class Critter {
 		for(int c = 0; c< Params.world_height; c++){
 			//print the border
 			System.out.print("|");
+			ArrayList<Critter> sameHeight = new ArrayList<>();
+			for (Critter critter : population){
+				if(critter.y_coord == c){
+					sameHeight.add(critter);
+				} // to get all the critters in that row
+			}
 			for(int r = 0; r<Params.world_width; r++){
 				// check if there's a critter there
+				String filler = " ";
 				// method to check if theres a critter there
+				for(Critter sameHeightCritters : sameHeight){
+					if(sameHeightCritters.x_coord == r){
+						filler = sameHeightCritters.toString();
+					}
+				} // find if theres sometthing
+
+				System.out.print(filler);
 			}
 			// print the end of the row
 			System.out.println("|");
