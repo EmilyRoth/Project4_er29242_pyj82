@@ -126,35 +126,75 @@ public abstract class Critter {
 	}
 	
 	protected final void run(int direction) {
-		switch (direction) {
-			// straight right (Increase X; no change Y)
-			case 0:
-				break;
-			// Diagonally Up to the Right (Increase X; Decrease Y)
-			case 1:
-				break;
-			// Straight Up (No change X; Decrease Y)
-			case 2:
-				break;
-			// Diagonally left Up (Decrease X; Decrease Y)
-			case 3:
-				break;
-			// Straight Left (Decrease X; no change Y)
-			case 4:
-				break;
-			// Diagonally Down Left (Decrease X; Increase Y)
-			case 5:
-				break;
-			// Straight Down (No change X; Increase Y)
-			case 6:
-				break;
-			// Diagonally down left (Increase X; Increase Y)
-			case 7:
-				break;
-			// Will never be default if random number is set up properly
-			default:
-				break;
-		}
+        switch (direction){
+            // straight right (Increase X; no change Y)
+            case 0:
+                x_coord+=2;
+                x_coord = x_coord % Params.world_width;
+                break;
+            // Diagonally Up to the Right (Increase X; Decrease Y)
+            case 1:
+                x_coord+=2;
+                x_coord = x_coord % Params.world_width;
+
+                y_coord-=2;
+                if(y_coord < 0){
+                    y_coord =+ Params.world_height;
+                }
+                break;
+            // Straight Up (No change X; Decrease Y)
+            case 2:
+                y_coord-=2;
+                if(y_coord < 0){
+                    y_coord =+ Params.world_height;
+                }
+                break;
+            // Diagonally left Up (Decrease X; Decrease Y)
+            case 3:
+                x_coord-=2;
+                if(x_coord < 0){
+                    x_coord =+ Params.world_width;
+                }
+
+                y_coord-=2;
+                if(y_coord < 0){
+                    y_coord =+ Params.world_height;
+                }
+                break;
+            // Straight Left (Decrease X; no change Y)
+            case 4:
+                x_coord-=2;
+                if(x_coord < 0){
+                    x_coord =+ Params.world_width;
+                }
+                break;
+            // Diagonally Down Left (Decrease X; Increase Y)
+            case 5:
+                x_coord-=2;
+                if(x_coord < 0){
+                    x_coord =+ Params.world_width;
+                }
+
+                y_coord+=2;
+                y_coord = y_coord % Params.world_height;
+                break;
+            // Straight Down (No change X; Increase Y)
+            case 6:
+                y_coord+=2;
+                y_coord = y_coord % Params.world_height;
+                break;
+            // Diagonally down left (Increase X; Increase Y)
+            case 7:
+                x_coord+=2;
+                x_coord = x_coord % Params.world_width;
+
+                y_coord+=2;
+                y_coord = y_coord % Params.world_height;
+                break;
+            // Will never be default if random number is set up properly
+            default:
+                break;
+        }
 	}
 	
 	protected final void reproduce(Critter offspring, int direction) {
