@@ -114,17 +114,14 @@ public class Main {
                 case "make":
                     if(arguments.length == 2 || arguments.length == 3){
                         String critterClass = arguments[1];
-                        int numOfCritters;
+                        int numOfCritters = 1; // default amount
                         if(arguments.length == 3){
                             numOfCritters = Integer.parseInt(arguments[2]);
-                        }
-                        else{
-                            numOfCritters = 1;
                         }
                         try{
                             for(int i =0; i< numOfCritters; i++) {
                                 Critter.makeCritter(critterClass);
-                                //todo: qualified name
+                                //todo: qualified name- Handled in critter
                             }
                         }
                         catch (InvalidCritterException e){
@@ -167,10 +164,7 @@ public class Main {
             // get new input
             input = kb.nextLine();
         }
-        // loop until quit input
-        // get inputs
-        // display board
-        // time step
+
 
         /* Write your code above */
         System.out.flush();
