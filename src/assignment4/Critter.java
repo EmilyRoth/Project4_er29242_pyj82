@@ -23,6 +23,7 @@ import java.util.List;
 
 public abstract class Critter {
 	private static String myPackage;
+	// is population the list that they want
 	private	static List<Critter> population = new java.util.ArrayList<Critter>();
 	private static List<Critter> babies = new java.util.ArrayList<Critter>();
 
@@ -74,6 +75,19 @@ public abstract class Critter {
 	 * @throws InvalidCritterException
 	 */
 	public static void makeCritter(String critter_class_name) throws InvalidCritterException {
+		try {
+			Class<TestCritter> new_class = (Class<TestCritter>) Class.forName(critter_class_name);
+			TestCritter critterNew = new_class.newInstance();
+			// when new critter is created, does it go into population or babies?
+			population.add(critterNew);
+		}catch (ClassNotFoundException e){
+			//Figure out what to do here
+			//throws InvalidCritterException(e);
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -173,9 +187,34 @@ public abstract class Critter {
 	
 	public static void worldTimeStep() {
 		// Complete this method.
+		// iterate through every creature to do time step
 	}
 	
 	public static void displayWorld() {
-		// Complete this method.
+
+		// print the top row
+		System.out.print("+");
+		for(int i = 0; i<Params.world_width; i++){
+			System.out.print("-");
+		}
+		System.out.println("+");
+
+		// for loop for row
+		for(int c = 0; c< Params.world_height; c++){
+			//print the border
+			System.out.print("|");
+			for(int r = 0; r<Params.world_width; r++){
+				// check if there's a critter there
+			}
+			// print the end of the row
+			System.out.println("|");
+		}
+
+		// print the bottom row
+		System.out.print("+");
+		for(int i = 0; i<Params.world_width; i++){
+			System.out.print("-");
+		}
+		System.out.println("+");
 	}
 }

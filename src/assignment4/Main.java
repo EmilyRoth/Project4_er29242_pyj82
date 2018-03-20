@@ -70,8 +70,14 @@ public class Main {
         /* Do not alter the code above for your submission. */
         /* Write your code below. */
         
-        // System.out.println("GLHF");
-        
+        System.out.println("GLHF");
+        // set up the world or critter object
+
+        // loop until quit input
+        // get inputs
+        // display board
+        // time step
+
         /* Write your code above */
         System.out.flush();
 
