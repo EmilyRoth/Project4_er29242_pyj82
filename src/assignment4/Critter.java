@@ -359,10 +359,13 @@ public abstract class Critter {
             population.add(critterNew);
         }catch (ClassNotFoundException e){
             //Figure out what to do here
-            //throws InvalidCritterException(e);
+            throw new InvalidCritterException(critter_class_name);
+            //System.out.println("1");
         } catch (IllegalAccessException e) {
+            System.out.println("2");
             e.printStackTrace();
         } catch (InstantiationException e) {
+            System.out.println("3");
             e.printStackTrace();
         }
     }

@@ -77,16 +77,22 @@ public class Main {
         System.out.println("GLHF");
         // set up the world or critter object
         String input = kb.nextLine();
+        //gets rid of beginning and ending whitespace
+        input =input.trim();
         while(!input.equals("quit")){
             // process commands
-            // TODO: Modify to account for extra words ASK CLARIFICATION
             String[] arguments = input.split("\\s+");
             String command = arguments[0];
             // parse and put into positions
             switch (command){
                 // Shows the world
                 case "show":
-                    Critter.displayWorld();
+                    if(arguments.length == 1) {
+                        Critter.displayWorld();
+                    }
+                    else {
+                        System.out.println("Error Processing: "+ input);
+                    }
                     break;
 
                 // Determines how many time steps to run
@@ -94,22 +100,36 @@ public class Main {
                     if(arguments.length == 1){
                         Critter.worldTimeStep();
                     }
-                    else{
-                        int numOfTimes = Integer.parseInt(arguments[1]);
+                    else if(arguments.length ==2){
+                        int numOfTimes =0;
+                        try {
+                            numOfTimes = Integer.parseInt(arguments[1]);
+                        }
+                        catch (Exception e){
+                            System.out.println("Error Processing: "+ input);
+                        }
                         for(int i = 0; i< numOfTimes; i++){
                             Critter.worldTimeStep();
                         }
+                    }
+                    else {
+                        System.out.println("Error Processing: "+ input);
                     }
                     break;
 
                 // Set random number seed
                 case "seed":
                     if(arguments.length == 2){
-                        int seed = Integer.parseInt(arguments[1]);
-                        Critter.setSeed(seed);
+                        try {
+                            int seed = Integer.parseInt(arguments[1]);
+                            Critter.setSeed(seed);
+                        }
+                        catch (Exception e){
+                            System.out.println("Error Processing: "+ input);
+                        }
                     }
                     else{
-                        System.out.println("Invalid Input");
+                        System.out.println("Error Processing: "+ input);
                     }
                     break;
 
@@ -118,12 +138,12 @@ public class Main {
                     if(arguments.length >= 2){
                         String critterClass = arguments[1];
                         int numOfCritters = 1; // default amount
-                        if(arguments.length >= 3){
+                        if(arguments.length == 3){
                             try {
                                 numOfCritters = Integer.parseInt(arguments[2]);
                             }
                             catch (Exception e){
-                                numOfCritters = 1;
+                                System.out.println("Error Processing: "+ input);
                             }
                         }
                         try{
@@ -133,13 +153,13 @@ public class Main {
                             }
                         }
                         catch (Exception e){
-                            System.out.println("Invalid Input: Not a Critter Class");
+                            System.out.println("Error Processing: "+ input);
                             break;
                         }
 
                     }
                     else{
-                        System.out.println("Invalid Input");
+                        System.out.println("Error Processing: "+ input);
                     }
                     break;
 
@@ -154,25 +174,29 @@ public class Main {
                             //todo: qualified name and runStats
                         }
                         catch (Exception e){
-                            System.out.println("Invalid Input: Not a Critter Class");
+                            System.out.println("Error Processing: "+ input);
                         }
                     }
                     else{
-                        System.out.println("Invalid Input");
+                        System.out.println("Error Processing" + input);
                     }
                     break;
-
+                case "quit":
+                    System.out.println("Error Processing: "+ input);
+                    break;
                 default:
                     System.out.println("Invalid Command: "+command);
                     break;
+
+
             }
 
-            // todo: method to parse it immediately to trim white space
             // menu to do each action
             // uses parse
 
             // get new input
             input = kb.nextLine();
+            input =input.trim();
         }
 
 
