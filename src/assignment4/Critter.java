@@ -625,10 +625,6 @@ public abstract class Critter {
         return true;
     }
 
-
-    /**
-     * TODO: Make critter method
-     */
 }
 
 
