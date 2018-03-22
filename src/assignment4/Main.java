@@ -124,7 +124,7 @@ public class Main {
                                 //todo: qualified name- Handled in critter
                             }
                         }
-                        catch (InvalidCritterException e){
+                        catch (Exception e){
                             System.out.println("Invalid Input: Not a Critter Class");
                             break;
                         }
@@ -139,7 +139,7 @@ public class Main {
                 case "stats":
                     if(arguments.length == 2){
                         try{
-                            Critter.getInstances(arguments[1]);
+                            Critter.runStats(Critter.getInstances(arguments[1]));
                             //todo: qualified name and runStats
                         }
                         catch (InvalidCritterException e){
@@ -153,7 +153,7 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("Invalid Choice");
+                    System.out.println("Invalid Command: "+command);
                     break;
             }
 

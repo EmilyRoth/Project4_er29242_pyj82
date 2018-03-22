@@ -53,6 +53,7 @@ public abstract class Critter {
 	private int y_coord;
 	
 	protected final void walk(int direction) {
+		energy =- Params.walk_energy_cost;
 		switch (direction){
 			// straight right (Increase X; no change Y)
 			case 0:
@@ -126,6 +127,7 @@ public abstract class Critter {
 	}
 	
 	protected final void run(int direction) {
+		energy =- Params.run_energy_cost;
         switch (direction){
             // straight right (Increase X; no change Y)
             case 0:
@@ -330,10 +332,16 @@ public abstract class Critter {
 	
 	public static void worldTimeStep() {
 		// Complete this method.
+		// 1. increment timestep; timestep++;
+		// 2. doTimeSteps();
 		// iterate through every creature to do time step
 		for(Critter crit : population){
 			crit.doTimeStep();
 		}
+		// 3. Do the fights. doEncounters();
+		// 4. updateRestEnergy();
+		// 5. Generate Algae genAlgae();
+		// 6. Move babies to general population. population.addAll(babies); babies.clear();
 	}
 	
 	public static void displayWorld() {
