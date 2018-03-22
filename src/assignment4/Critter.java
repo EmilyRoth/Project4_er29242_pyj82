@@ -159,75 +159,93 @@ public abstract class Critter {
     protected final void run(int direction) {
         System.out.println("Run");
         this.deductEnergy(Params.run_energy_cost);
-        switch (direction){
-            // straight right (Increase X; no change Y)
-            case 0:
-                x_coord+=2;
-                x_coord = x_coord % Params.world_width;
-                break;
-            // Diagonally Up to the Right (Increase X; Decrease Y)
-            case 1:
-                x_coord+=2;
-                x_coord = x_coord % Params.world_width;
+        int newX = x_coord;
+        int newY = y_coord;
+        if(!moved){
+            moved = true;
+            switch (direction){
+                // straight right (Increase X; no change Y)
+                case 0:
+                    newX+=2;
+                    newX = newX % Params.world_width;
+                    break;
+                // Diagonally Up to the Right (Increase X; Decrease Y)
+                case 1:
+                    newX+=2;
+                    newX = newX % Params.world_width;
 
-                y_coord-=2;
-                if(y_coord < 0){
-                    y_coord =+ Params.world_height;
-                }
-                break;
-            // Straight Up (No change X; Decrease Y)
-            case 2:
-                y_coord-=2;
-                if(y_coord < 0){
-                    y_coord =+ Params.world_height;
-                }
-                break;
-            // Diagonally left Up (Decrease X; Decrease Y)
-            case 3:
-                x_coord-=2;
-                if(x_coord < 0){
-                    x_coord =+ Params.world_width;
-                }
+                    newY-=2;
+                    if(newY < 0){
+                        newY =+ Params.world_height;
+                    }
+                    break;
+                // Straight Up (No change X; Decrease Y)
+                case 2:
+                    newY-=2;
+                    if(newY < 0){
+                        newY =+ Params.world_height;
+                    }
+                    break;
+                // Diagonally left Up (Decrease X; Decrease Y)
+                case 3:
+                    newX-=2;
+                    if(newX < 0){
+                        newX =+ Params.world_width;
+                    }
 
-                y_coord-=2;
-                if(y_coord < 0){
-                    y_coord =+ Params.world_height;
-                }
-                break;
-            // Straight Left (Decrease X; no change Y)
-            case 4:
-                x_coord-=2;
-                if(x_coord < 0){
-                    x_coord =+ Params.world_width;
-                }
-                break;
-            // Diagonally Down Left (Decrease X; Increase Y)
-            case 5:
-                x_coord-=2;
-                if(x_coord < 0){
-                    x_coord =+ Params.world_width;
-                }
+                    newY-=2;
+                    if(newY < 0){
+                        newY =+ Params.world_height;
+                    }
+                    break;
+                // Straight Left (Decrease X; no change Y)
+                case 4:
+                    newX-=2;
+                    if(newX < 0){
+                        newX =+ Params.world_width;
+                    }
+                    break;
+                // Diagonally Down Left (Decrease X; Increase Y)
+                case 5:
+                    newX-=2;
+                    if(newX < 0){
+                        newX =+ Params.world_width;
+                    }
 
-                y_coord+=2;
-                y_coord = y_coord % Params.world_height;
-                break;
-            // Straight Down (No change X; Increase Y)
-            case 6:
-                y_coord+=2;
-                y_coord = y_coord % Params.world_height;
-                break;
-            // Diagonally down left (Increase X; Increase Y)
-            case 7:
-                x_coord+=2;
-                x_coord = x_coord % Params.world_width;
+                    newY+=2;
+                    newY = newY % Params.world_height;
+                    break;
+                // Straight Down (No change X; Increase Y)
+                case 6:
+                    newY+=2;
+                    newY = newY % Params.world_height;
+                    break;
+                // Diagonally down left (Increase X; Increase Y)
+                case 7:
+                    newX+=2;
+                    newX = newX % Params.world_width;
 
-                y_coord+=2;
-                y_coord = y_coord % Params.world_height;
-                break;
-            // Will never be default if random number is set up properly
-            default:
-                break;
-        }
+                    newY+=2;
+                    newY = newY % Params.world_height;
+                    break;
+                // Will never be default if random number is set up properly
+                default:
+                    break;
+            }// switch menu
+
+            // see if critter is in a fight or not
+            if(runningAway){
+                if(notOccupied(newX, newY)){
+                    System.out.println("Able to run away");
+                    x_coord = newX;
+                    y_coord = newY;
+                }
+            }else {
+                x_coord = newX;
+                y_coord = newY;
+            }
+        } // if critter has not moved
+
 
     }
 
