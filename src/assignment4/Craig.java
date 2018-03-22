@@ -56,6 +56,7 @@ public class Craig extends Critter {
 	}
 
 	public static void runStats(java.util.List<Critter> craigs) {
+		System.out.println("CRAIG STATS");
 		int total_straight = 0;
 		int total_left = 0;
 		int total_right = 0;

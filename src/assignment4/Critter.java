@@ -375,6 +375,19 @@ public abstract class Critter {
      */
     public static List<Critter> getInstances(String critter_class_name) throws InvalidCritterException {
         List<Critter> result = new java.util.ArrayList<Critter>();
+        try{
+            String qualifiedName = myPackage.toString() + "." + critter_class_name;
+            Class<Critter> new_class = (Class<Critter>) Class.forName(qualifiedName);
+            Critter critterNew = new_class.newInstance();
+            for(Critter crit : population){
+                if(critterNew.toString().equals(crit.toString())){
+                    result.add(crit);
+                }
+            }
+
+        }catch (Exception e){
+
+        }
 
         return result;
     }
@@ -461,6 +474,8 @@ public abstract class Critter {
      */
     public static void clearWorld() {
         // Complete this method.
+        population.clear();
+        babies.clear();
     }
     // TODO: MAKE THE RUNNING AWAY VALUE TRUE IF RUNNING AWAY
     private static void encounter(Critter A, Critter B){
@@ -536,7 +551,6 @@ public abstract class Critter {
             crit.deductEnergy(Params.rest_energy_cost);
         }
         // generate algae
-        Algae newAlgae = new Algae();
         try {
             makeCritter("Algae");
         } catch (InvalidCritterException e) {

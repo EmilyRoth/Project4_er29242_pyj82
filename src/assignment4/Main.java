@@ -13,7 +13,9 @@ package assignment4;
  */
 
 import java.lang.reflect.Array;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.io.*;
 
@@ -77,6 +79,7 @@ public class Main {
         String input = kb.nextLine();
         while(!input.equals("quit")){
             // process commands
+            // TODO: Modify to account for extra words ASK CLARIFICATION
             String[] arguments = input.split("\\s+");
             String command = arguments[0];
             // parse and put into positions
@@ -112,10 +115,10 @@ public class Main {
 
                 //make given number of critters in given class
                 case "make":
-                    if(arguments.length == 2 || arguments.length == 3){
+                    if(arguments.length >= 2){
                         String critterClass = arguments[1];
                         int numOfCritters = 1; // default amount
-                        if(arguments.length == 3){
+                        if(arguments.length >= 3){
                             try {
                                 numOfCritters = Integer.parseInt(arguments[2]);
                             }
@@ -144,13 +147,15 @@ public class Main {
                 case "stats":
                     if(arguments.length == 2){
                         try{
-                            Critter.runStats(Critter.getInstances(arguments[1]));
+                            String qualifiedName = myPackage.toString() + "." + arguments[1];
+                            Class<Critter> new_class = (Class<Critter>) Class.forName(qualifiedName);
+                            Method m = new_class.getMethod("runStats", List.class);
+                            m.invoke(new_class, Critter.getInstances(arguments[1]));
                             //todo: qualified name and runStats
                         }
-                        catch (InvalidCritterException e){
+                        catch (Exception e){
                             System.out.println("Invalid Input: Not a Critter Class");
                         }
-
                     }
                     else{
                         System.out.println("Invalid Input");
