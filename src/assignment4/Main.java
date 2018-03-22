@@ -116,7 +116,12 @@ public class Main {
                         String critterClass = arguments[1];
                         int numOfCritters = 1; // default amount
                         if(arguments.length == 3){
-                            numOfCritters = Integer.parseInt(arguments[2]);
+                            try {
+                                numOfCritters = Integer.parseInt(arguments[2]);
+                            }
+                            catch (Exception e){
+                                numOfCritters = 1;
+                            }
                         }
                         try{
                             for(int i =0; i< numOfCritters; i++) {
