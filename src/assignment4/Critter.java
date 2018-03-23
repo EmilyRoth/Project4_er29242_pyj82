@@ -1,28 +1,23 @@
 package assignment4;
-/* CRITTERS Critter.java
- * EE422C Project 4 submission by
- * Replace <...> with your actual data.
- * <Student1 Name>
- * <Student1 EID>
- * <Student1 5-digit Unique No.>
- * <Student2 Name>
- * <Student2 EID>
- * <Student2 5-digit Unique No.>
- * Slip days used: <0>
- * Fall 2016
+/* CRITTERS Main.java
+ * EE422C Project 4 submission by Emily Roth and Prajakta Joshi
+ * Emily Roth
+ * er29242
+ * 15470
+ * Prajakta Joshi
+ * pyj82
+ * 15470
  */
-
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-/* see the PDF for descriptions of the methods and fields in this class
+/** see the PDF for descriptions of the methods and fields in this class
  * you may add fields, methods or inner classes to Critter ONLY if you make your additions private
  * no new public, protected or default-package code or data can be added to Critter
+ * Abstract class
  */
-
-
 public abstract class Critter {
     private static String myPackage;
     // is population the list that they want
@@ -35,10 +30,20 @@ public abstract class Critter {
     }
 
     private static java.util.Random rand = new java.util.Random();
+
+    /**
+     * Gets a ranom int from a range 0 to max
+     * @param max the max value the random int can be
+     * @return int between 0 and max
+     */
     public static int getRandomInt(int max) {
         return rand.nextInt(max);
     }
 
+    /**
+     * Sets the seed of the Random object. mainly used for testing
+     * @param new_seed number to make as the new see
+     */
     public static void setSeed(long new_seed) {
         rand = new java.util.Random(new_seed);
     }
@@ -56,16 +61,22 @@ public abstract class Critter {
     private boolean moved = false;
     private boolean runningAway = false;
 
+    /**Deducts energy from the critter it is called on.
+     * Removes them immediately from the population if their energy drops below 0
+     * @param loss the energy amount to deduct from the critter
+     */
     private void deductEnergy(int loss){
         energy-=loss;
         if (energy <= 0){
-            System.out.println(this.toString() + " Has died");
             population.remove(this);
         }
     }
 
+    /**
+     * Walk: change coordinates if applicable and calls deductEnergy
+     * @param direction direction to walk in 0-7
+     */
     protected final void walk(int direction) {
-        System.out.println("Walk");
         this.deductEnergy(Params.walk_energy_cost);
         int newX = x_coord;
         int newY = y_coord;
@@ -119,7 +130,6 @@ public abstract class Critter {
                     if(newX < 0){
                         newX =+ Params.world_width;
                     }
-
                     newY++;
                     newY = newY % Params.world_height;
                     break;
@@ -132,7 +142,6 @@ public abstract class Critter {
                 case 7:
                     newX++;
                     newX = newX % Params.world_width;
-
                     newY++;
                     newY = newY % Params.world_height;
                     break;
@@ -140,24 +149,26 @@ public abstract class Critter {
                 default:
                     break;
             }// switch menu
-
             // see if critter is in a fight or not
             if(runningAway){
                 if(notOccupied(newX, newY)){
-                    System.out.println("Able to run away");
+                    // able to run away
                     x_coord = newX;
                     y_coord = newY;
                 }
             }else {
+                // moves into new position
                 x_coord = newX;
                 y_coord = newY;
             }
         } // if critter has not moved
-
     }
 
+    /**
+     * Run: changes coordinates if applicable and calls deductEnergy
+     * @param direction direction specified to run in
+     */
     protected final void run(int direction) {
-        System.out.println("Run");
         this.deductEnergy(Params.run_energy_cost);
         int newX = x_coord;
         int newY = y_coord;
@@ -236,7 +247,7 @@ public abstract class Critter {
             // see if critter is in a fight or not
             if(runningAway){
                 if(notOccupied(newX, newY)){
-                    System.out.println("Able to run away");
+                    // able to run
                     x_coord = newX;
                     y_coord = newY;
                 }
@@ -249,6 +260,11 @@ public abstract class Critter {
 
     }
 
+    /**
+     * Reproduces
+     * @param offspring
+     * @param direction
+     */
     protected final void reproduce(Critter offspring, int direction) {
         offspring.energy = this.energy/2;
         this.energy = this.energy - offspring.energy;
@@ -325,8 +341,6 @@ public abstract class Critter {
             default:
                 break;
         }
-
-        System.out.println("EXITS");
         babies.add(offspring);
 
     }
@@ -346,26 +360,25 @@ public abstract class Critter {
      */
     public static void makeCritter(String critter_class_name) throws InvalidCritterException {
         try {
+            // produces qualified name
             String qualifiedName = myPackage.toString() + "." + critter_class_name;
+            //Gets the class of that name
             Class<Critter> new_class = (Class<Critter>) Class.forName(qualifiedName);
+            // creates new instance
             Critter critterNew = new_class.newInstance();
-            // when new critter is created, does it go into population or babies?
-            // ARE WE ALLOWED TO DO THIS
+            // pick coordinates to place
             critterNew.x_coord = (rand.nextInt(Params.world_width));
             critterNew.y_coord = (rand.nextInt(Params.world_height));
             critterNew.energy = Params.start_energy;
             critterNew.runningAway = false;
             critterNew.moved = false;
+            // add to list
             population.add(critterNew);
         }catch (ClassNotFoundException e){
-            //Figure out what to do here
             throw new InvalidCritterException(critter_class_name);
-            //System.out.println("1");
         } catch (IllegalAccessException e) {
-            System.out.println("2");
             e.printStackTrace();
         } catch (InstantiationException e) {
-            System.out.println("3");
             e.printStackTrace();
         }
     }
@@ -379,6 +392,7 @@ public abstract class Critter {
     public static List<Critter> getInstances(String critter_class_name) throws InvalidCritterException {
         List<Critter> result = new java.util.ArrayList<Critter>();
         try{
+            // produces qualified name
             String qualifiedName = myPackage.toString() + "." + critter_class_name;
             Class<Critter> new_class = (Class<Critter>) Class.forName(qualifiedName);
             Critter critterNew = new_class.newInstance();
@@ -387,11 +401,9 @@ public abstract class Critter {
                     result.add(crit);
                 }
             }
-
         }catch (Exception e){
 
         }
-
         return result;
     }
 
@@ -420,7 +432,7 @@ public abstract class Critter {
     }
 
 
-    /* the TestCritter class allows some critters to "cheat". If you want to
+    /** the TestCritter class allows some critters to "cheat". If you want to
      * create tests of your Critter model, you can create subclasses of this class
      * and then use the setter functions contained here.
      *
@@ -431,31 +443,55 @@ public abstract class Critter {
      * so that they correctly update your grid/data structure.
      */
     static abstract class TestCritter extends Critter {
+        /**
+         * Setter method for energy
+         * @param new_energy_value the new value to be stored
+         */
         protected void setEnergy(int new_energy_value) {
             super.energy = new_energy_value;
         }
 
+        /**
+         * Setter for x_coor
+         * @param new_x_coord new x position to be stored
+         */
         protected void setX_coord(int new_x_coord) {
             super.x_coord = new_x_coord;
         }
 
+        /**
+         * setter for y coordinate
+         * @param new_y_coord new y position to be stored
+         */
         protected void setY_coord(int new_y_coord) {
             super.y_coord = new_y_coord;
         }
 
+        /**
+         * Getter method for X coordinate
+         * @return the x coordinate
+         */
         protected int getX_coord() {
             return super.x_coord;
         }
 
+        /**
+         * Getter method for Y coordinate
+         * @return the y coordinate
+         */
         protected int getY_coord() {
             return super.y_coord;
         }
-
 
         /*
          * This method getPopulation has to be modified by you if you are not using the population
          * ArrayList that has been provided in the starter code.  In any case, it has to be
          * implemented for grading tests to work.
+         */
+
+        /**
+         * getter method for population
+         * @return the list of critters in the population collection
          */
         protected static List<Critter> getPopulation() {
             return population;
@@ -466,6 +502,11 @@ public abstract class Critter {
          * ArrayList that has been provided in the starter code.  In any case, it has to be
          * implemented for grading tests to work.  Babies should be added to the general population
          * at either the beginning OR the end of every timestep.
+         */
+
+        /**
+         * Getter method
+         * @return list of babies
          */
         protected static List<Critter> getBabies() {
             return babies;
@@ -480,15 +521,18 @@ public abstract class Critter {
         population.clear();
         babies.clear();
     }
-    // TODO: MAKE THE RUNNING AWAY VALUE TRUE IF RUNNING AWAY
+
+    /**
+     * To have an encounter between two critters
+     * @param A The first Critter
+     * @param B The second critter
+     */
     private static void encounter(Critter A, Critter B){
-        System.out.println("Encounter");
         // if both want to fight
         if(A.fight(B.toString()) && B.fight(A.toString())){
             int aRoll = rand.nextInt(A.energy);
             int bRoll = rand.nextInt(B.energy);
             if(aRoll >= bRoll){
-                System.out.println("A beat B");
                 // a wins or there's a tie
                 A.energy += (B.energy/2);
                 population.remove(B);
@@ -526,23 +570,21 @@ public abstract class Critter {
                 }
             }
         }
-
-
     }
 
+    /**
+     * Goes through and has all the critters do their steps, checks encounters, deducts rest energy, generates algae then add babies
+     */
     public static void worldTimeStep() {
         // Complete this method.
         // iterate through every creature to do time step
         for(Critter crit : new ArrayList<>(population)){
             crit.doTimeStep();
         }
-
         // do fights
-
         for (Critter outer : new ArrayList<>(population)){
             for (Critter inner : new ArrayList<>(population)){
                 if(sameSpot(outer,inner) && outer!=inner){
-                    System.out.println("wtf");
                     outer.runningAway = true;
                     inner.runningAway = true;
                     encounter(outer, inner);
@@ -569,8 +611,10 @@ public abstract class Critter {
         }
     }
 
+    /**
+     * Displays the grid with  the critters and a border
+     */
     public static void displayWorld() {
-
         // print the top row
         System.out.print("+");
         for(int i = 0; i<Params.world_width; i++){
@@ -596,14 +640,12 @@ public abstract class Critter {
                     if(sameHeightCritters.x_coord == r){
                         filler = sameHeightCritters.toString();
                     }
-                } // find if theres sometthing
-
+                } // find if theres something
                 System.out.print(filler);
             }
             // print the end of the row
             System.out.println("|");
         }
-
         // print the bottom row
         System.out.print("+");
         for(int i = 0; i<Params.world_width; i++){
@@ -612,10 +654,22 @@ public abstract class Critter {
         System.out.println("+");
     }
 
+    /**
+     * Checks if two critters are in the same spot
+     * @param A One of the critters
+     * @param B The other critter
+     * @return true if in the same spot, false otherwise
+     */
     private static boolean sameSpot(Critter A, Critter B){
         return (A.x_coord == B.x_coord && A.y_coord == B.y_coord);
     }
 
+    /**
+     * Checks that the space a critter wants
+     * @param x The x coordinate of the position being checked
+     * @param y The y coordinates of the position being checked
+     * @return true of the space is available, false if the space is occupied
+     */
     private static boolean notOccupied(int x, int y){
         for(Critter crit : population){
             if(crit.x_coord == x && crit.y_coord == y){
@@ -624,7 +678,6 @@ public abstract class Critter {
         }
         return true;
     }
-
 }
 
 

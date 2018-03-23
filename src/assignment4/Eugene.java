@@ -1,21 +1,41 @@
 package assignment4;
-
-/* This Critter randomly chooses a direction at its creation then only ever goes diagonally or straight(North, South,
+/* CRITTERS Main.java
+ * EE422C Project 4 submission by Emily Roth and Prajakta Joshi
+ * Emily Roth
+ * er29242
+ * 15470
+ * Prajakta Joshi
+ * pyj82
+ * 15470
+ */
+/** This Critter randomly chooses a direction at its creation then only ever goes diagonally or straight(North, South,
  *  East, West) depending
  * the direction it originally choose.
  * Eugene runs.
  */
 public class Eugene extends Critter {
 
+    /**
+     * To string to override the one in critter
+     * @return E
+     */
     @Override
     public String toString() { return "E"; }
 
     private int dir;
 
+    /**
+     * Constructor
+     */
     public Eugene() {
         dir = Critter.getRandomInt(8);
     }
 
+    /**
+     * Eugene custom fight method
+     * @param not_used the string name of the critter eugene wants to fight
+     * @return true if direction is even, false if direction is odd
+     */
     public boolean fight(String not_used) {
         if(dir%2 == 0)
             return true;
@@ -25,18 +45,19 @@ public class Eugene extends Critter {
         }
     }
 
+    /**
+     * Custom do time step method
+     * Toggles between even and odd directions
+     */
     @Override
     public void doTimeStep() {
         //make movement
         run(dir);
-
-        if (getEnergy() > 150 && Critter.getRandomInt(10)%2 == 0) {
+        if (getEnergy() > Params.min_reproduce_energy && Critter.getRandomInt(10)%2 == 0) {
             Eugene child = new Eugene();
             reproduce(child, Critter.getRandomInt(8));
 
         }
-
-
         //pick new direction.
         //if already even number will continue to be even number
         if(dir%2 ==0){
@@ -48,6 +69,10 @@ public class Eugene extends Critter {
         }
     }
 
+    /**
+     * Shows the number of eugenes then the ones going in a line and the ones going diagonally
+     * @param eugenes
+     */
     public static void runStats(java.util.List<Critter> eugenes) {
         int line =0;
         int diagonal = 0;

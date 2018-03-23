@@ -1,15 +1,12 @@
 package assignment4;
 /* CRITTERS Main.java
- * EE422C Project 4 submission by
- * Replace <...> with your actual data.
- * <Student1 Name>
- * <Student1 EID>
- * <Student1 5-digit Unique No.>
- * <Student2 Name>
- * <Student2 EID>
- * <Student2 5-digit Unique No.>
- * Slip days used: <0>
- * Fall 2016
+ * EE422C Project 4 submission by Emily Roth and Prajakta Joshi
+ * Emily Roth
+ * er29242
+ * 15470
+ * Prajakta Joshi
+ * pyj82
+ * 15470
  */
 
 import java.lang.reflect.Array;
@@ -20,7 +17,7 @@ import java.util.Scanner;
 import java.io.*;
 
 
-/*
+/**
  * Usage: java <pkgname>.Main <input file> test
  * input file is optional.  If input file is specified, the word 'test' is optional.
  * May not use 'test' argument without specifying input file.
@@ -70,15 +67,13 @@ public class Main {
         } else { // if no arguments to main
             kb = new Scanner(System.in); // use keyboard and console
         }
-
         /* Do not alter the code above for your submission. */
         /* Write your code below. */
-        
-        System.out.println("GLHF");
         // set up the world or critter object
         String input = kb.nextLine();
         //gets rid of beginning and ending whitespace
         input =input.trim();
+        // starts loop to keep world going until quit
         while(!input.equals("quit")){
             // process commands
             String[] arguments = input.split("\\s+");
@@ -132,7 +127,6 @@ public class Main {
                         System.out.println("Error Processing: "+ input);
                     }
                     break;
-
                 //make given number of critters in given class
                 case "make":
                     if(arguments.length >= 2){
@@ -144,64 +138,58 @@ public class Main {
                             }
                             catch (Exception e){
                                 System.out.println("Error Processing: "+ input);
-                            }
-                        }
+                            }//catch
+                        }// if
                         try{
                             for(int i =0; i< numOfCritters; i++) {
-                                Critter.makeCritter(critterClass);
-                                //todo: qualified name- Handled in critter
-                            }
-                        }
+                                Critter.makeCritter(critterClass); // passes to model
+                            }//for
+                        }//try
                         catch (Exception e){
                             System.out.println("Error Processing: "+ input);
                             break;
-                        }
-
-                    }
+                        }//catch
+                    }// if
                     else{
                         System.out.println("Error Processing: "+ input);
-                    }
+                    }//else
                     break;
-
-                // displays states
+                // displays stats
                 case "stats":
                     if(arguments.length == 2){
                         try{
+                            // gets the qualified name
                             String qualifiedName = myPackage.toString() + "." + arguments[1];
+                            // gets class using qualified name
                             Class<Critter> new_class = (Class<Critter>) Class.forName(qualifiedName);
+                            // get the correct method from the class
                             Method m = new_class.getMethod("runStats", List.class);
+                            // Invoke the method on the current critter then enter params
                             m.invoke(new_class, Critter.getInstances(arguments[1]));
-                            //todo: qualified name and runStats
                         }
                         catch (Exception e){
                             System.out.println("Error Processing: "+ input);
-                        }
-                    }
+                        }//catch
+                    }// if
                     else{
-                        System.out.println("Error Processing" + input);
-                    }
+                        // not correct amout of args
+                        System.out.println("Error Processing: " + input);
+                    }//else
                     break;
+                // Quits the program
                 case "quit":
                     System.out.println("Error Processing: "+ input);
                     break;
+                // Invalid option picked
                 default:
                     System.out.println("Invalid Command: "+command);
                     break;
-
-
-            }
-
-            // menu to do each action
-            // uses parse
-
+            }//switch
             // get new input
             input = kb.nextLine();
             input =input.trim();
-        }
-
-
+        } // while loop
         /* Write your code above */
         System.out.flush();
-
     }
 }
