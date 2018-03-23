@@ -17,7 +17,7 @@ import java.util.Scanner;
 import java.io.*;
 
 
-/**
+/*
  * Usage: java <pkgname>.Main <input file> test
  * input file is optional.  If input file is specified, the word 'test' is optional.
  * May not use 'test' argument without specifying input file.

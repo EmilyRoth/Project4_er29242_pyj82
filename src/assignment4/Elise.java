@@ -13,8 +13,8 @@ package assignment4;
  */
 public class Elise extends Critter {
     /**
-     * To string to return &
-     * @return &
+     * To string to return
+     * @return string
      */
     @Override
     public String toString() { return "&"; }

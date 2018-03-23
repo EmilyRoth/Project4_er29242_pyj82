@@ -71,7 +71,7 @@ public class Eugene extends Critter {
 
     /**
      * Shows the number of eugenes then the ones going in a line and the ones going diagonally
-     * @param eugenes
+     * @param eugenes list
      */
     public static void runStats(java.util.List<Critter> eugenes) {
         int line =0;
