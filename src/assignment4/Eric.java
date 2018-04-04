@@ -83,4 +83,10 @@ public class Eric extends Critter {
         System.out.println("total steps towars right" + totalRights);
         System.out.println();
     }
+
+    @Override
+    public CritterShape viewShape() { return CritterShape.SQUARE; }
+
+    @Override
+    public javafx.scene.paint.Color viewOutlineColor() { return javafx.scene.paint.Color.BLUE; }
 }

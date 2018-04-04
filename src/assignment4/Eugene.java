@@ -88,4 +88,10 @@ public class Eugene extends Critter {
         System.out.println("Total going in Line: " +line);
         System.out.println("Total going Diagonally: "+ diagonal);
     }
+
+    @Override
+    public CritterShape viewShape() { return CritterShape.SQUARE; }
+
+    @Override
+    public javafx.scene.paint.Color viewOutlineColor() { return javafx.scene.paint.Color.BLUE; }
 }

@@ -18,4 +18,10 @@ public class MyCritter7 extends TestCritter {
 	public String toString () {
 		return "7";
 	}
+
+	@Override
+	public CritterShape viewShape() { return CritterShape.SQUARE; }
+
+	@Override
+	public javafx.scene.paint.Color viewOutlineColor() { return javafx.scene.paint.Color.BLUE; }
 }

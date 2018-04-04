@@ -9,6 +9,23 @@ package assignment4;
  * 15470
  */
 
+import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+import java.awt.*;
 import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -22,8 +39,10 @@ import java.io.*;
  * input file is optional.  If input file is specified, the word 'test' is optional.
  * May not use 'test' argument without specifying input file.
  */
-public class Main {
+public class Main extends Application {
 
+
+    static GridPane gp = new GridPane();
     static Scanner kb;	// scanner connected to keyboard input, or input file
     private static String inputFile;	// input file, used instead of keyboard input if specified
     static ByteArrayOutputStream testOutputString;	// if test specified, holds all console output
@@ -42,7 +61,8 @@ public class Main {
      * @param args args can be empty.  If not empty, provide two parameters -- the first is a file name, 
      * and the second is test (for test output, where all output to be directed to a String), or nothing.
      */
-    public static void main(String[] args) { 
+    public static void main(String[] args) {
+        Application.launch(args);
         if (args.length != 0) {
             try {
                 inputFile = args[0];
@@ -142,6 +162,7 @@ public class Main {
                         }// if
                         try{
                             for(int i =0; i< numOfCritters; i++) {
+
                                 Critter.makeCritter(critterClass); // passes to model
                             }//for
                         }//try
@@ -191,5 +212,134 @@ public class Main {
         } // while loop
         /* Write your code above */
         System.out.flush();
+    }
+
+    // where the application actually starts
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        BorderPane rootPane = new BorderPane();
+        FlowPane fp = new FlowPane();
+        //CritterGrid.paint();
+        //
+       CritterGrid.createGrid();
+        // Step
+        gp.setGridLinesVisible(true);
+        ChoiceBox makeChoice = new ChoiceBox<>();
+        makeChoice.getItems().add("Craig");
+        makeChoice.getItems().add("Eugene");
+        makeChoice.getItems().add("Elise");
+        makeChoice.getItems().add("Reagan");
+        makeChoice.getItems().add("Eric");
+        makeChoice.getItems().add("Algae");
+
+        Button make = new Button("Make");
+        make.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                // make a new critter
+                System.out.println("Make button");
+                String critterSelection = (String) makeChoice.getValue();
+                try{
+                        Critter.makeCritter(critterSelection); // passes to model
+
+                }//try
+                catch (Exception e){
+                    System.out.println("How did this happen");
+                }//catch
+            }
+        });
+
+        // checkbox for run stats
+        final String[] statsOptions = new String[]{"Craig", "Eugene", "Elise", "Reagan", "Eric", "Algae"};
+        ArrayList<String> statsClicked = new ArrayList<>();
+
+        final CheckBox[] cbs = new CheckBox[statsOptions.length];
+        for(int i = 0; i< statsOptions.length; i++){
+            final CheckBox cb = cbs[i] = new CheckBox(statsOptions[i]);
+            int finalI = i;
+            cb.selectedProperty().addListener(new ChangeListener<Boolean>() {
+                @Override
+                public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                    // run stats method
+                    if(newValue){
+                        // run the stats on this
+                        statsClicked.add(statsOptions[finalI]);
+
+                    }else{
+                        statsClicked.remove(statsOptions[finalI]);
+                    }
+                }
+            });
+        }
+
+        VBox statsBox = new VBox();
+        statsBox.getChildren().addAll(cbs);
+
+        // Run Stats
+        Button stats = new Button("Run Stats");
+        stats.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Run stats");
+            }
+        });
+
+        // display
+        Button show = new Button("Show");
+        show.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.out.println("Show Bttn");
+                Critter.displayWorld();
+
+            }
+        });
+
+        Button step = new Button("Step");
+        step.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                // call a world time step
+                System.out.println("Step button");
+                Critter.worldTimeStep();
+                for(String str: statsClicked){
+                    try{
+                        // gets the qualified name
+                        String qualifiedName = myPackage.toString() + "." + str;
+                        // gets class using qualified name
+                        Class<Critter> new_class = (Class<Critter>) Class.forName(qualifiedName);
+                        // get the correct method from the class
+                        Method m = new_class.getMethod("runStats", List.class);
+                        // Invoke the method on the current critter then enter params
+                        m.invoke(new_class, Critter.getInstances(str));
+                    }
+                    catch (Exception e){
+                        System.out.println("Error Processing: ");
+                    }//catch
+                }
+            }
+        });
+
+
+        Button quit = new Button("Quit");
+        quit.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                System.exit(0);
+            }
+        });
+
+        fp.getChildren().add(show);
+        fp.getChildren().add(stats);
+        fp.getChildren().add(step);
+        fp.getChildren().add(makeChoice);
+        fp.getChildren().add(statsBox);
+        fp.getChildren().add(make);
+        fp.getChildren().add(quit);
+        rootPane.setRight(gp);
+        rootPane.setLeft(fp);
+        Scene scene = new Scene(rootPane);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 }

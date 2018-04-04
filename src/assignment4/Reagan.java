@@ -112,4 +112,10 @@ public class Reagan extends Critter {
         System.out.println("Number of Adults: " + adults );
         System.out.println("Number of Children: "+ children);
     }
+
+    @Override
+    public CritterShape viewShape() { return CritterShape.SQUARE; }
+
+    @Override
+    public javafx.scene.paint.Color viewOutlineColor() { return javafx.scene.paint.Color.BLUE; }
 }

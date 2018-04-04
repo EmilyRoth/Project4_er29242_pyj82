@@ -9,6 +9,11 @@ package assignment4;
  * 15470
  */
 
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -30,6 +35,34 @@ public abstract class Critter {
     }
 
     private static java.util.Random rand = new java.util.Random();
+
+    public enum CritterShape {
+        CIRCLE,
+        SQUARE,
+        TRIANGLE,
+        DIAMOND,
+        STAR
+    }
+
+    /* the default color is white, which I hope makes critters invisible by default
+     * If you change the background color of your View component, then update the default
+     * color to be the same as you background
+     *
+     * critters must override at least one of the following three methods, it is not
+     * proper for critters to remain invisible in the view
+     *
+     * If a critter only overrides the outline color, then it will look like a non-filled
+     * shape, at least, that's the intent. You can edit these default methods however you
+     * need to, but please preserve that intent as you implement them.
+     */
+    public javafx.scene.paint.Color viewColor() {
+        return javafx.scene.paint.Color.WHITE;
+    }
+
+    public javafx.scene.paint.Color viewOutlineColor() { return viewColor(); }
+    public javafx.scene.paint.Color viewFillColor() { return viewColor(); }
+
+    public abstract CritterShape viewShape();
 
     /**
      * Gets a ranom int from a range 0 to max
@@ -609,23 +642,19 @@ public abstract class Critter {
             crit.moved = false;
             crit.runningAway = false;
         }
+        displayWorld();
     }
 
     /**
      * Displays the grid with  the critters and a border
      */
     public static void displayWorld() {
+        // get the arraylist of critters
         // print the top row
-        System.out.print("+");
-        for(int i = 0; i<Params.world_width; i++){
-            System.out.print("-");
-        }
-        System.out.println("+");
 
         // for loop for row
         for(int c = 0; c< Params.world_height; c++){
-            //print the border
-            System.out.print("|");
+            // Get array of critters on the row
             ArrayList<Critter> sameHeight = new ArrayList<>();
             for (Critter critter : population){
                 if(critter.y_coord == c){
@@ -639,6 +668,10 @@ public abstract class Critter {
                 for(Critter sameHeightCritters : sameHeight){
                     if(sameHeightCritters.x_coord == r){
                         filler = sameHeightCritters.toString();
+                        Shape s = createShape(sameHeightCritters.viewShape());
+                        s.setFill(sameHeightCritters.viewFillColor());
+                        s.setStroke(sameHeightCritters.viewOutlineColor());
+                        Main.gp.add(s, r, c);
                     }
                 } // find if theres something
                 System.out.print(filler);
@@ -677,6 +710,40 @@ public abstract class Critter {
             }
         }
         return true;
+    }
+
+    private static Shape createShape(CritterShape s){
+        Shape newShape;
+        switch (s){
+            case SQUARE:
+                newShape = new Rectangle(2, 2);
+                return newShape;
+            case STAR:
+                double cor[] = {10, 85,
+                        85, 75,
+                        110, 10,
+                        135, 75,
+                        210, 85,
+                        160, 125,
+                        170, 190,
+                        110, 150,
+                        50, 190,
+                        60, 125};
+
+                newShape = new Polygon(cor);
+                return newShape;
+            case CIRCLE:
+                newShape = new Circle(10);
+                return newShape;
+            case DIAMOND:
+
+                break;
+            case TRIANGLE:
+                break;
+            default:
+                break;
+        }
+        return newShape = new Rectangle(10, 10);
     }
 }
 
