@@ -9,10 +9,13 @@ package assignment4;
  * 15470
  */
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
+import javafx.util.Duration;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -642,7 +645,9 @@ public abstract class Critter {
             crit.moved = false;
             crit.runningAway = false;
         }
-        displayWorld();
+        Timeline timeline = new Timeline(new KeyFrame(
+                Duration.millis(2500), ae -> displayWorld()));
+        timeline.play();
     }
 
     /**
@@ -651,7 +656,7 @@ public abstract class Critter {
     public static void displayWorld() {
         // get the arraylist of critters
         // print the top row
-
+        Main.gp.getChildren().clear();
         // for loop for row
         for(int c = 0; c< Params.world_height; c++){
             // Get array of critters on the row

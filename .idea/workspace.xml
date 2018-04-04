@@ -6,22 +6,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c78e1c0b-9dd0-4302-b8df-32b91362bc53" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/assignment4/CritterGrid.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Main.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Main.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Params.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Params.class" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Algae.java" afterPath="$PROJECT_DIR$/src/assignment4/Algae.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Craig.java" afterPath="$PROJECT_DIR$/src/assignment4/Craig.java" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Algae.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Algae.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Craig.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Craig.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter$TestCritter.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter$TestCritter.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Elise.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Elise.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eric.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eric.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eugene.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eugene.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter1.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter1.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter6.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter6.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter7.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter7.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Reagan.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Reagan.class" />
       <change beforePath="$PROJECT_DIR$/src/assignment4/Critter.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Elise.java" afterPath="$PROJECT_DIR$/src/assignment4/Elise.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Eric.java" afterPath="$PROJECT_DIR$/src/assignment4/Eric.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Eugene.java" afterPath="$PROJECT_DIR$/src/assignment4/Eugene.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Main.java" afterPath="$PROJECT_DIR$/src/assignment4/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/MyCritter1.java" afterPath="$PROJECT_DIR$/src/assignment4/MyCritter1.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/MyCritter6.java" afterPath="$PROJECT_DIR$/src/assignment4/MyCritter6.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/MyCritter7.java" afterPath="$PROJECT_DIR$/src/assignment4/MyCritter7.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Params.java" afterPath="$PROJECT_DIR$/src/assignment4/Params.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Reagan.java" afterPath="$PROJECT_DIR$/src/assignment4/Reagan.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,8 +66,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="190" column="21" lean-forward="false" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
+            <state relative-caret-position="-4">
+              <caret line="301" column="28" lean-forward="true" selection-start-line="301" selection-start-column="28" selection-end-line="301" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -78,10 +75,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Thread.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/lang/Thread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Algae.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="719">
+            <state relative-caret-position="656">
               <caret line="22" column="75" lean-forward="false" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -90,10 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CritterGrid.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CritterGrid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/CritterGrid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="804">
+            <state relative-caret-position="1040">
               <caret line="77" column="7" lean-forward="false" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -105,7 +112,7 @@
       <file leaf-file-name="Elise.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Elise.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="787">
+            <state relative-caret-position="667">
               <caret line="99" column="96" lean-forward="false" selection-start-line="99" selection-start-column="96" selection-end-line="99" selection-end-column="96" />
               <folding />
             </state>
@@ -122,11 +129,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Critter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Critter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
-              <caret line="644" column="23" lean-forward="true" selection-start-line="644" selection-start-column="23" selection-end-line="644" selection-end-column="23" />
+            <state relative-caret-position="748">
+              <caret line="653" column="24" lean-forward="true" selection-start-line="653" selection-start-column="24" selection-end-line="653" selection-end-column="24" />
               <folding>
                 <element signature="method#deductEnergy#0;class#Critter#0" expanded="false" />
                 <element signature="method#walk#0;class#Critter#0" expanded="false" />
@@ -140,8 +147,17 @@
                 <element signature="docComment;method#clearWorld#0;class#Critter#0" expanded="false" />
                 <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
                 <element signature="docComment;method#encounter#0;class#Critter#0" expanded="false" />
-                <element signature="method#encounter#0;class#Critter#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Random.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/Random.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="387" column="0" lean-forward="false" selection-start-line="387" selection-start-column="0" selection-end-line="387" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -187,8 +203,8 @@
         <option value="$PROJECT_DIR$/src/assignment4/MyCritter7.java" />
         <option value="$PROJECT_DIR$/src/assignment4/CritterGrid.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Main.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/Critter.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Algae.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/Critter.java" />
       </list>
     </option>
   </component>
@@ -198,11 +214,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="98" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="990" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1612" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -582,7 +598,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521766641984</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="GUI Implemented">
+      <created>1522871348526</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1522871348526</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -594,10 +617,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42922000" />
+    <option name="totallyTimeSpent" value="46382000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -608,12 +632,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329904" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2085048" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35665295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2075" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2075" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -690,7 +714,8 @@
     <MESSAGE value="Final Product; just need to add readme and javadoc" />
     <MESSAGE value="javadoc done" />
     <MESSAGE value="zip file ive submitted" />
-    <option name="LAST_COMMIT_MESSAGE" value="zip file ive submitted" />
+    <MESSAGE value="GUI Implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI Implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -702,7 +727,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assignment4/Critter.java</url>
-          <line>611</line>
+          <line>614</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -712,22 +737,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter7.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/MyCritter6.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
@@ -824,22 +833,22 @@
           <caret line="545" column="30" lean-forward="false" selection-start-line="545" selection-start-column="26" selection-end-line="545" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#2479#2480#0" expanded="false" />
-            <element signature="e#2519#2520#0" expanded="false" />
-            <element signature="e#2704#2705#0" expanded="false" />
-            <element signature="e#2757#2758#0" expanded="false" />
-            <element signature="e#17755#17756#0" expanded="false" />
-            <element signature="e#17806#17807#0" expanded="false" />
-            <element signature="e#17946#17947#0" expanded="false" />
-            <element signature="e#17990#17991#0" expanded="false" />
-            <element signature="e#18130#18131#0" expanded="false" />
-            <element signature="e#18174#18175#0" expanded="false" />
-            <element signature="e#18630#18631#0" expanded="false" />
-            <element signature="e#18671#18672#0" expanded="false" />
-            <element signature="e#19180#19181#0" expanded="false" />
-            <element signature="e#19217#19218#0" expanded="false" />
-            <element signature="e#24535#24536#0" expanded="false" />
-            <element signature="e#24608#24609#0" expanded="false" />
+            <element signature="e#2576#2577#0" expanded="false" />
+            <element signature="e#2616#2617#0" expanded="false" />
+            <element signature="e#2801#2802#0" expanded="false" />
+            <element signature="e#2854#2855#0" expanded="false" />
+            <element signature="e#17852#17853#0" expanded="false" />
+            <element signature="e#17903#17904#0" expanded="false" />
+            <element signature="e#18043#18044#0" expanded="false" />
+            <element signature="e#18087#18088#0" expanded="false" />
+            <element signature="e#18227#18228#0" expanded="false" />
+            <element signature="e#18271#18272#0" expanded="false" />
+            <element signature="e#18727#18728#0" expanded="false" />
+            <element signature="e#18768#18769#0" expanded="false" />
+            <element signature="e#19277#19278#0" expanded="false" />
+            <element signature="e#19314#19315#0" expanded="false" />
+            <element signature="e#24789#24790#0" expanded="false" />
+            <element signature="e#24862#24863#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -874,22 +883,22 @@
           <caret line="477" column="23" lean-forward="true" selection-start-line="477" selection-start-column="23" selection-end-line="477" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#2479#2480#0" expanded="false" />
-            <element signature="e#2519#2520#0" expanded="false" />
-            <element signature="e#2704#2705#0" expanded="false" />
-            <element signature="e#2757#2758#0" expanded="false" />
-            <element signature="e#17755#17756#0" expanded="false" />
-            <element signature="e#17806#17807#0" expanded="false" />
-            <element signature="e#17946#17947#0" expanded="false" />
-            <element signature="e#17990#17991#0" expanded="false" />
-            <element signature="e#18130#18131#0" expanded="false" />
-            <element signature="e#18174#18175#0" expanded="false" />
-            <element signature="e#18630#18631#0" expanded="false" />
-            <element signature="e#18671#18672#0" expanded="false" />
-            <element signature="e#19180#19181#0" expanded="false" />
-            <element signature="e#19217#19218#0" expanded="false" />
-            <element signature="e#24535#24536#0" expanded="false" />
-            <element signature="e#24608#24609#0" expanded="false" />
+            <element signature="e#2576#2577#0" expanded="false" />
+            <element signature="e#2616#2617#0" expanded="false" />
+            <element signature="e#2801#2802#0" expanded="false" />
+            <element signature="e#2854#2855#0" expanded="false" />
+            <element signature="e#17852#17853#0" expanded="false" />
+            <element signature="e#17903#17904#0" expanded="false" />
+            <element signature="e#18043#18044#0" expanded="false" />
+            <element signature="e#18087#18088#0" expanded="false" />
+            <element signature="e#18227#18228#0" expanded="false" />
+            <element signature="e#18271#18272#0" expanded="false" />
+            <element signature="e#18727#18728#0" expanded="false" />
+            <element signature="e#18768#18769#0" expanded="false" />
+            <element signature="e#19277#19278#0" expanded="false" />
+            <element signature="e#19314#19315#0" expanded="false" />
+            <element signature="e#24789#24790#0" expanded="false" />
+            <element signature="e#24862#24863#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1132,14 +1141,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Elise.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="787">
-          <caret line="99" column="96" lean-forward="false" selection-start-line="99" selection-start-column="96" selection-end-line="99" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2480">
@@ -1148,10 +1149,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="22" column="75" lean-forward="false" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="747" column="0" lean-forward="false" selection-start-line="747" selection-start-column="0" selection-end-line="747" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Elise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="99" column="96" lean-forward="false" selection-start-line="99" selection-start-column="96" selection-end-line="99" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/CritterGrid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1040">
+          <caret line="77" column="7" lean-forward="false" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/Random.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="387" column="0" lean-forward="false" selection-start-line="387" selection-start-column="0" selection-end-line="387" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="190" column="21" lean-forward="false" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
+        <state relative-caret-position="-4">
+          <caret line="301" column="28" lean-forward="true" selection-start-line="301" selection-start-column="28" selection-end-line="301" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1160,8 +1205,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="644" column="23" lean-forward="true" selection-start-line="644" selection-start-column="23" selection-end-line="644" selection-end-column="23" />
+        <state relative-caret-position="748">
+          <caret line="653" column="24" lean-forward="true" selection-start-line="653" selection-start-column="24" selection-end-line="653" selection-end-column="24" />
           <folding>
             <element signature="method#deductEnergy#0;class#Critter#0" expanded="false" />
             <element signature="method#walk#0;class#Critter#0" expanded="false" />
@@ -1175,27 +1220,6 @@
             <element signature="docComment;method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="method#clearWorld#0;class#Critter#0" expanded="false" />
             <element signature="docComment;method#encounter#0;class#Critter#0" expanded="false" />
-            <element signature="method#encounter#0;class#Critter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="22" column="75" lean-forward="false" selection-start-line="22" selection-start-column="75" selection-end-line="22" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/CritterGrid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="804">
-          <caret line="77" column="7" lean-forward="false" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
