@@ -7,18 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c78e1c0b-9dd0-4302-b8df-32b91362bc53" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Algae.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Algae.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Craig.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Craig.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter$TestCritter.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter$TestCritter.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Elise.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Elise.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eric.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eric.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eugene.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eugene.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter1.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter6.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter6.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter7.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/MyCritter7.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Reagan.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Reagan.class" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Critter.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -605,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522871348526</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="In the process of animation">
+      <created>1522876691292</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1522876691292</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -617,7 +612,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46382000" />
+    <option name="totallyTimeSpent" value="47051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-16" y="-16" width="3232" height="1732" extended-state="6" />
@@ -715,7 +710,8 @@
     <MESSAGE value="javadoc done" />
     <MESSAGE value="zip file ive submitted" />
     <MESSAGE value="GUI Implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI Implemented" />
+    <MESSAGE value="In the process of animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="In the process of animation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
