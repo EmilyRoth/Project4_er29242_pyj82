@@ -223,14 +223,15 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         BorderPane rootPane = new BorderPane();
         FlowPane fp = new FlowPane();
-        //CritterGrid.paint();
-        //
-       CritterGrid.createGrid();
-        // Step
+        //create grid
+        CritterGrid.createGrid();
         gp.setGridLinesVisible(true);
 
+        /**
+         *  find all critters, sets arraylist of strings to all critter names
+         */
         ArrayList<String> names = new ArrayList<String>();
-        File dir = new File("C:\\Users\\Emily\\IdeaProjects\\Project4_er29242_pyj82\\src\\assignment4");
+        File dir = new File("C:\\Users\\Prajakta Joshi\\IdeaProjects\\Project4_er29242_pyj82\\src\\assignment4");
         File[] listOfFiles = dir.listFiles();
         try{
 
@@ -266,6 +267,7 @@ public class Main extends Application {
 
                     }
                     else {
+                        //only valid critter names
                         names.add(classname);
                     }
                 }
@@ -276,7 +278,9 @@ public class Main extends Application {
         }
 
 
-
+        /**
+         * choiceBoxes for make
+         */
         ChoiceBox makeChoice = new ChoiceBox<>();
         makeChoice.getItems().addAll(names);
 
@@ -308,19 +312,23 @@ public class Main extends Application {
                 }//catch
             }
         });
-
+        /**
+         * formats them in a row
+         */
         HBox makeBox = new HBox();
         makeBox.getChildren().add(makeNum);
         makeBox.getChildren().add(makeChoice);
         makeBox.getChildren().add(make);
 
-        // checkbox for run stats
-        final String[] statsOptions = new String[]{"Craig", "Eugene", "Elise", "Reagan", "Eric", "Algae"};
+        /**
+         *  checkbox for run stats
+         */
+
         ArrayList<String> statsClicked = new ArrayList<>();
 
-        final CheckBox[] cbs = new CheckBox[statsOptions.length];
-        for(int i = 0; i< statsOptions.length; i++){
-            final CheckBox cb = cbs[i] = new CheckBox(statsOptions[i]);
+        final CheckBox[] cbs = new CheckBox[names.size()];
+        for(int i = 0; i< names.size(); i++){
+            final CheckBox cb = cbs[i] = new CheckBox(names.get(i));
             int finalI = i;
             cb.selectedProperty().addListener(new ChangeListener<Boolean>() {
                 @Override
@@ -328,10 +336,10 @@ public class Main extends Application {
                     // run stats method
                     if(newValue){
                         // run the stats on this
-                        statsClicked.add(statsOptions[finalI]);
+                        statsClicked.add(names.get(finalI));
 
                     }else{
-                        statsClicked.remove(statsOptions[finalI]);
+                        statsClicked.remove(names.get(finalI));
                     }
                 }
             });
@@ -344,33 +352,7 @@ public class Main extends Application {
         // text box to put the run stats into
         Text runStats = new Text();
 
-        // Run Stats
-        Button stats = new Button("Run Stats");
-        stats.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Run stats");
-                for(String str: statsClicked){
-                    try{
-                        // gets the qualified name
-                        String qualifiedName = myPackage.toString() + "." + str;
-                        // gets class using qualified name
-                        Class<Critter> new_class = (Class<Critter>) Class.forName(qualifiedName);
-                        // get the correct method from the class
-                        Method m = new_class.getMethod("runStats", List.class);
-                        // Invoke the method on the current critter then enter params
-                        Object value = m.invoke(new_class, Critter.getInstances(str));
-                        stringStats[0] = (String) value;
-                        System.out.println("Uh");
-                        runStats.setText((String) value);
 
-                    }
-                    catch (Exception e){
-                        System.out.println("Error Processing: ");
-                    }//catch
-                }
-            }
-        });
 
         //step
         Button step = new Button("Step");
@@ -398,7 +380,9 @@ public class Main extends Application {
                 }
             }
         });
-        //animate
+        /**
+         * animation: slider to adjust number of steps per frame
+         */
 
         Slider slider = new Slider(1, 100, 1);
         slider.setMajorTickUnit(10);
@@ -431,12 +415,15 @@ public class Main extends Application {
                 })
         );
 
+        /**
+         * animation: start stop button for animation
+         */
+
         animateWorld.setCycleCount(Animation.INDEFINITE);
         ToggleButton animate = new ToggleButton("start");
 
         animate.setOnAction(event -> {
             if (animate.isSelected()) {
-                stats.setDisable(true);
                 step.setDisable(true);
                 statsBox.setDisable(true);
                 makeChoice.setDisable(true);
@@ -445,7 +432,6 @@ public class Main extends Application {
                 animateWorld.play();
             } else {
                 animateWorld.stop();
-                stats.setDisable(false);
                 step.setDisable(false);
                 statsBox.setDisable(false);
                 makeChoice.setDisable(false);
@@ -454,7 +440,9 @@ public class Main extends Application {
             }
         });
 
-
+        /**
+         * quit button. exits program
+         */
         Button quit = new Button("Quit");
         quit.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -462,6 +450,15 @@ public class Main extends Application {
                 System.exit(0);
             }
         });
+
+        /**
+         * formating on flowpane
+         * make
+         * animation
+         * stats boxes
+         * quit
+         * stats result
+         */
         gp.setGridLinesVisible(true);
 
         String finalStats = stringStats[0];
@@ -469,17 +466,22 @@ public class Main extends Application {
 
         runStats.setFont(Font.font("Comic Sans MS", 20));
 
+        VBox down = new VBox();
 
-       // fp.getChildren().add(show);
+        HBox across = new HBox();
+        across.getChildren().add(step);
+        across.getChildren().add(animate);
+        across.getChildren().add(slider);
+
+
+        down.getChildren().add(makeBox);
+        down.getChildren().add(across);
+        down.getChildren().add(statsBox);
+        down.getChildren().add(quit);
         statsBox.getChildren().add(runStats);
-        fp.getChildren().add(runStats);
-        fp.getChildren().add(stats);
-        fp.getChildren().add(step);
-        fp.getChildren().add(animate);
-        fp.getChildren().add(slider);
-        fp.getChildren().add(statsBox);
-        fp.getChildren().add(makeBox);
-        fp.getChildren().add(quit);
+        down.getChildren().add(runStats);
+
+        fp.getChildren().add(down);
         rootPane.setRight(gp);
         rootPane.setLeft(fp);
         Scene scene = new Scene(rootPane);

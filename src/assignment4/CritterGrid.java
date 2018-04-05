@@ -40,7 +40,7 @@ public class CritterGrid {
         return s;
     }
 
-    /*
+    /**
      * Paints the shape on a grid.
      */
     public static void paint() {
@@ -56,6 +56,9 @@ public class CritterGrid {
         Shape s = new Rectangle(5, 5);
         return s;
     }
+    /**
+     * Formats gridpane size. for 1200x990 screen
+     */
 
     public static void createGrid(){
         //grid.getColumnConstraints().add(new ColumnConstraints(gridWidth));
@@ -67,25 +70,15 @@ public class CritterGrid {
         double rw = 995/Params.world_height;
         for(int i = 0; i < Params.world_width; i++) {
             ColumnConstraints column = new ColumnConstraints(col);
-           // column.setPercentWidth(100/Params.world_width);
-            //column.setFillWidth(true);
-            //column.setHgrow(Priority.ALWAYS);
             Main.gp.getColumnConstraints().add(column);
         }
 
         for(int i = 0; i < Params.world_height; i++) {
             RowConstraints row = new RowConstraints(rw);
-            //row.setPercentHeight(100/Params.world_height);
-            //row.setFillHeight(true);
-           // row.setVgrow(Priority.ALWAYS);
             Main.gp.getRowConstraints().add(row);
         }
         Main.gp.setGridLinesVisible(true);
 
-   //     Circle s = new Circle(10);
-   //     s.setFill(javafx.scene.paint.Color.RED);
-
-     //   Main.gp.add(s, 2, 3);
     }
 
 }
