@@ -1,20 +1,12 @@
 package assignment4;
-/* CRITTERS Main.java
- * EE422C Project 4 submission by Emily Roth and Prajakta Joshi
- * Emily Roth
- * er29242
- * 15470
- * Prajakta Joshi
- * pyj82
- * 15470
- */
+
 
 import javafx.scene.paint.Color;
 
 /**Elise will run or walk depending on Energy
  *Never fights, will go fast depending on energy. Always escapes.
  */
-public class Elise extends Critter {
+public class Hello extends Critter {
     /**
      * To string to return
      * @return string
@@ -29,7 +21,7 @@ public class Elise extends Critter {
     /**
      * Constructor
      */
-    public Elise() {
+    public Hello() {
         dir = Critter.getRandomInt(5);
     }
 
@@ -86,7 +78,7 @@ public class Elise extends Critter {
         int totalwalkss =0;
         int totalStays=0;
         for(Object obj : elises){
-            Elise eli = (Elise) obj;
+            Hello eli = (Hello) obj;
             totalRunss+=eli.runs;
             totalwalkss+= eli.walks;
             totalStays+= eli.stay;
@@ -99,8 +91,8 @@ public class Elise extends Critter {
     public CritterShape viewShape() { return CritterShape.SQUARE; }
 
     @Override
-    public javafx.scene.paint.Color viewOutlineColor() { return Color.SALMON; }
+    public javafx.scene.paint.Color viewOutlineColor() { return Color.VIOLET; }
 
     @Override
-    public javafx.scene.paint.Color viewFillColor() { return Color.SALMON; }
+    public javafx.scene.paint.Color viewFillColor() { return Color.VIOLET; }
 }

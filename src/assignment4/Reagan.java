@@ -91,7 +91,7 @@ public class Reagan extends Critter {
      * Run stats for Reagan which shows how many children, how many adults, lifespan, and avg span
      * @param reagans arraylist of all instances of reagan
      */
-    public static void runStats(java.util.List<Critter> reagans) {
+    public static String runStats(java.util.List<Critter> reagans) {
         int lifeTotal =0;
         int adults =0;
         int children =0;
@@ -107,10 +107,9 @@ public class Reagan extends Critter {
             }
         }
         lifeAvg= lifeTotal/reagans.size();
-        System.out.println("Total Reagans: " + reagans.size());
-        System.out.println("Avg Life Span" + lifeAvg);
-        System.out.println("Number of Adults: " + adults );
-        System.out.println("Number of Children: "+ children);
+
+        String str = "Total Reagans: " + reagans.size() + "\nAvg Life Span" + lifeAvg + "\nNumber of Adults: " + adults + "\nNumber of Children: "+ children;
+        return str;
     }
 
     @Override

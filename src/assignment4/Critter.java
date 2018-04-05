@@ -381,6 +381,8 @@ public abstract class Critter {
 
     }
 
+
+
     public abstract void doTimeStep();
     public abstract boolean fight(String oponent);
 
@@ -447,8 +449,9 @@ public abstract class Critter {
      * Prints out how many Critters of each type there are on the board.
      * @param critters List of Critters.
      */
-    public static void runStats(List<Critter> critters) {
-        System.out.print("" + critters.size() + " critters as follows -- ");
+    public static String runStats(List<Critter> critters) {
+        String str;
+        str = ("" + critters.size() + " critters as follows -- ");
         java.util.Map<String, Integer> critter_count = new java.util.HashMap<String, Integer>();
         for (Critter crit : critters) {
             String crit_string = crit.toString();
@@ -461,10 +464,10 @@ public abstract class Critter {
         }
         String prefix = "";
         for (String s : critter_count.keySet()) {
-            System.out.print(prefix + s + ":" + critter_count.get(s));
+            str = str + " " + (prefix + s + ":" + critter_count.get(s));
             prefix = ", ";
         }
-        System.out.println();
+        return str;
     }
 
 
@@ -592,7 +595,9 @@ public abstract class Critter {
             }
         } else{
             // Neither want to fight but if in same position they do
-            if(A.x_coord == B.x_coord && A.y_coord == B.y_coord){
+            if(A.x_coord == B.x_coord && A.y_coord == B.y_coord && A.energy>0 && B.energy > 0){
+                System.out.println("A Energy "+A.energy);
+                System.out.println("B Engergy "+B.energy);
                 int aRoll = rand.nextInt(A.energy);
                 int bRoll = rand.nextInt(B.energy);
                 if(aRoll >= bRoll){
@@ -692,6 +697,106 @@ public abstract class Critter {
         }
         System.out.println("+");
     }
+
+
+    protected final String look(int direction, boolean steps) {
+        this.deductEnergy(Params.look_energy_cost);
+        int stepCount = 1;
+        if(steps){
+            stepCount = 2;
+        }
+        int newX = x_coord;
+        int newY = y_coord;
+        if(!moved){
+            moved = true;
+            switch (direction){
+                // straight right (Increase X; no change Y)
+                case 0:
+                    newX+=stepCount;
+                    newX = newX % Params.world_width;
+                    break;
+                // Diagonally Up to the Right (Increase X; Decrease Y)
+                case 1:
+                    newX+=stepCount;
+                    newX = newX % Params.world_width;
+
+                    newY-=stepCount;
+                    if(newY < 0){
+                        newY =+ Params.world_height;
+                    }
+                    break;
+                // Straight Up (No change X; Decrease Y)
+                case 2:
+                    newY-=stepCount;
+                    if(newY < 0){
+                        newY =+ Params.world_height;
+                    }
+                    break;
+                // Diagonally left Up (Decrease X; Decrease Y)
+                case 3:
+                    newX-=stepCount;
+                    if(newX < 0){
+                        newX =+ Params.world_width;
+                    }
+
+                    newY-=stepCount;
+                    if(newY < 0){
+                        newY =+ Params.world_height;
+                    }
+                    break;
+                // Straight Left (Decrease X; no change Y)
+                case 4:
+                    newX-=stepCount;
+                    if(newX < 0){
+                        newX =+ Params.world_width;
+                    }
+                    break;
+                // Diagonally Down Left (Decrease X; Increase Y)
+                case 5:
+                    newX-=stepCount;
+                    if(newX < 0){
+                        newX =+ Params.world_width;
+                    }
+
+                    newY+=stepCount;
+                    newY = newY % Params.world_height;
+                    break;
+                // Straight Down (No change X; Increase Y)
+                case 6:
+                    newY+=stepCount;
+                    newY = newY % Params.world_height;
+                    break;
+                // Diagonally down left (Increase X; Increase Y)
+                case 7:
+                    newX+=stepCount;
+                    newX = newX % Params.world_width;
+
+                    newY+=stepCount;
+                    newY = newY % Params.world_height;
+                    break;
+                // Will never be default if random number is set up properly
+                default:
+                    break;
+            }// switch menu
+
+            // see if critter is in a fight or not
+
+           if(notOccupied(newX, newY)){
+               // able to run
+               return null;
+           }else{
+                // is occupied
+               // to string for critter in that location
+           }
+
+        } // if critter has not moved
+
+        return "";}
+    //If the location is
+    //unoccupied, then look returns null. If the location is occupied, then look returns the
+    //toString() result for the Critter in that location. In either case, the critter invoking
+    //look will pay the Params.look_energy_cost energy cost.
+    //When implementing look you must respect the simulation rule that al
 
     /**
      * Checks if two critters are in the same spot

@@ -22,6 +22,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -228,7 +230,7 @@ public class Main extends Application {
         gp.setGridLinesVisible(true);
 
         ArrayList<String> names = new ArrayList<String>();
-        File dir = new File("C:\\Users\\Prajakta Joshi\\IdeaProjects\\Project4_er29242_pyj82\\src\\assignment4");
+        File dir = new File("C:\\Users\\Emily\\IdeaProjects\\Project4_er29242_pyj82\\src\\assignment4");
         File[] listOfFiles = dir.listFiles();
         try{
 
@@ -337,6 +339,10 @@ public class Main extends Application {
 
         VBox statsBox = new VBox();
         statsBox.getChildren().addAll(cbs);
+        String[] stringStats = new String[1];
+
+        // text box to put the run stats into
+        Text runStats = new Text();
 
         // Run Stats
         Button stats = new Button("Run Stats");
@@ -353,7 +359,11 @@ public class Main extends Application {
                         // get the correct method from the class
                         Method m = new_class.getMethod("runStats", List.class);
                         // Invoke the method on the current critter then enter params
-                        m.invoke(new_class, Critter.getInstances(str));
+                        Object value = m.invoke(new_class, Critter.getInstances(str));
+                        stringStats[0] = (String) value;
+                        System.out.println("Uh");
+                        runStats.setText((String) value);
+
                     }
                     catch (Exception e){
                         System.out.println("Error Processing: ");
@@ -410,7 +420,10 @@ public class Main extends Application {
                             // get the correct method from the class
                             Method m = new_class.getMethod("runStats", List.class);
                             // Invoke the method on the current critter then enter params
-                            m.invoke(new_class, Critter.getInstances(str));
+                            Object value = m.invoke(new_class, Critter.getInstances(str));
+                            stringStats[0] = (String) value;
+                            System.out.println("Try");
+                            runStats.setText((String) value);
                         } catch (Exception e) {
                             System.out.println("Error Processing: ");
                         }//catch
@@ -450,7 +463,16 @@ public class Main extends Application {
             }
         });
         gp.setGridLinesVisible(true);
+
+        String finalStats = stringStats[0];
+        System.out.println("Final stats: "+finalStats);
+
+        runStats.setFont(Font.font("Comic Sans MS", 20));
+
+
        // fp.getChildren().add(show);
+        statsBox.getChildren().add(runStats);
+        fp.getChildren().add(runStats);
         fp.getChildren().add(stats);
         fp.getChildren().add(step);
         fp.getChildren().add(animate);

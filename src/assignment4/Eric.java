@@ -74,7 +74,8 @@ public class Eric extends Critter {
      * Stats showing the steps all the erics have taken to the left and right
      * @param erics list of all instances of eric
      */
-    public static void runStats(java.util.List<Critter> erics) {
+    public static String runStats(java.util.List<Critter> erics) {
+        String str;
         int totalRights =0;
         int totallefts =0;
         for(Object obj : erics){
@@ -82,9 +83,8 @@ public class Eric extends Critter {
             totallefts+=err.left;
             totalRights+= err.right;
         }
-        System.out.println("total steps towards left"+ totallefts);
-        System.out.println("total steps towars right" + totalRights);
-        System.out.println();
+        str = "total steps towards left"+ totallefts + "\ntotal steps towars right" + totalRights;
+        return str;
     }
 
     @Override

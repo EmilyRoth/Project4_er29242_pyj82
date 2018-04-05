@@ -76,7 +76,8 @@ public class Eugene extends Critter {
      * Shows the number of eugenes then the ones going in a line and the ones going diagonally
      * @param eugenes list
      */
-    public static void runStats(java.util.List<Critter> eugenes) {
+    public static String runStats(java.util.List<Critter> eugenes) {
+        String str;
         int line =0;
         int diagonal = 0;
         for (Object obj : eugenes) {
@@ -87,9 +88,8 @@ public class Eugene extends Critter {
             else
                 diagonal++;
         }
-        System.out.println("Total Eugenes: " + eugenes.size());
-        System.out.println("Total going in Line: " +line);
-        System.out.println("Total going Diagonally: "+ diagonal);
+        str = "Total Eugenes: " + eugenes.size() + "\nTotal going in Line: " +line + "\nTotal going Diagonally: "+ diagonal;
+        return str;
     }
 
     @Override
