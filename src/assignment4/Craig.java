@@ -1,6 +1,8 @@
 package assignment4;
 
 
+import javafx.scene.paint.Color;
+
 /*
  * Example critter
  * Do not change or submit this file.
@@ -77,8 +79,11 @@ public class Craig extends Critter {
 
 
 	@Override
-	public CritterShape viewShape() { return CritterShape.SQUARE; }
+	public CritterShape viewShape() { return CritterShape.DIAMOND; }
 
 	@Override
-	public javafx.scene.paint.Color viewOutlineColor() { return javafx.scene.paint.Color.BLUE; }
+	public javafx.scene.paint.Color viewOutlineColor() { return Color.RED; }
+
+	@Override
+	public javafx.scene.paint.Color viewFillColor() { return Color.RED; }
 }

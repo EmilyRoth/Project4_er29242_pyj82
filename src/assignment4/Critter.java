@@ -645,9 +645,9 @@ public abstract class Critter {
             crit.moved = false;
             crit.runningAway = false;
         }
-        Timeline timeline = new Timeline(new KeyFrame(
+        /*Timeline timeline = new Timeline(new KeyFrame(
                 Duration.millis(2500), ae -> displayWorld()));
-        timeline.play();
+        timeline.play();*/
     }
 
     /**
@@ -716,35 +716,47 @@ public abstract class Critter {
         }
         return true;
     }
-
+    static int shs =7;
     private static Shape createShape(CritterShape s){
         Shape newShape;
         switch (s){
             case SQUARE:
-                newShape = new Rectangle(2, 2);
+                newShape = new Rectangle(shs*2, shs*2);
                 return newShape;
             case STAR:
-                double cor[] = {10, 85,
-                        85, 75,
-                        110, 10,
-                        135, 75,
-                        210, 85,
-                        160, 125,
-                        170, 190,
-                        110, 150,
-                        50, 190,
-                        60, 125};
+                double cor[] = {
+                        0.0, shs * 3,
+                        shs * 2, shs * 2,
+                        shs * 3, 0.0,
+                        shs * 4, shs * 2,
+                        shs * 6, shs * 3,
+                        shs * 4, shs * 4,
+                        shs * 3, shs * 6,
+                        shs * 2, shs * 4
+                };
 
                 newShape = new Polygon(cor);
                 return newShape;
             case CIRCLE:
-                newShape = new Circle(10);
+                newShape = new Circle(shs*2);
                 return newShape;
             case DIAMOND:
-
-                break;
+                double dim[] = {
+                        shs*2.0, 0.0,
+                        0.0,shs*2.0,
+                        shs*2.0,shs*4.0,
+                        shs*4.0,shs*2.0
+                };
+                newShape = new Polygon(dim);
+                return newShape;
             case TRIANGLE:
-                break;
+                double tri[] = {
+                        shs*3.0, 0.0,
+                        0.0,shs*3.0,
+                        shs*6.0, shs*3.0
+                };
+                newShape = new Polygon(tri);
+                return newShape;
             default:
                 break;
         }

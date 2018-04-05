@@ -17,7 +17,7 @@ public class Algae extends TestCritter {
 	}
 
 	@Override
-	public CritterShape viewShape() { return CritterShape.SQUARE; }
+	public CritterShape viewShape() { return CritterShape.CIRCLE; }
 
 	@Override
 	public javafx.scene.paint.Color viewOutlineColor() { return Color.GREEN; }

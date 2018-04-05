@@ -8,6 +8,9 @@ package assignment4;
  * pyj82
  * 15470
  */
+
+import javafx.scene.paint.Color;
+
 /**Elise will run or walk depending on Energy
  *Never fights, will go fast depending on energy. Always escapes.
  */
@@ -97,5 +100,8 @@ public class Elise extends Critter {
     public CritterShape viewShape() { return CritterShape.SQUARE; }
 
     @Override
-    public javafx.scene.paint.Color viewOutlineColor() { return javafx.scene.paint.Color.BLUE; }
+    public javafx.scene.paint.Color viewOutlineColor() { return Color.SALMON; }
+
+    @Override
+    public javafx.scene.paint.Color viewFillColor() { return Color.SALMON; }
 }

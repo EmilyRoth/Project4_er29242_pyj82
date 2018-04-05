@@ -9,6 +9,9 @@ package assignment4;
  * 15470
  */
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -16,14 +19,14 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.awt.*;
 import java.lang.reflect.Array;
@@ -241,6 +244,7 @@ public class Main extends Application {
                 String critterSelection = (String) makeChoice.getValue();
                 try{
                         Critter.makeCritter(critterSelection); // passes to model
+                        Critter.displayWorld();
 
                 }//try
                 catch (Exception e){
@@ -281,27 +285,6 @@ public class Main extends Application {
             @Override
             public void handle(ActionEvent event) {
                 System.out.println("Run stats");
-            }
-        });
-
-        // display
-        Button show = new Button("Show");
-        show.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Show Bttn");
-                Critter.displayWorld();
-
-            }
-        });
-
-        Button step = new Button("Step");
-        step.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                // call a world time step
-                System.out.println("Step button");
-                Critter.worldTimeStep();
                 for(String str: statsClicked){
                     try{
                         // gets the qualified name
@@ -320,6 +303,87 @@ public class Main extends Application {
             }
         });
 
+        //step
+        Button step = new Button("Step");
+        step.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                // call a world time step
+                System.out.println("Step button");
+                Critter.worldTimeStep();
+                Critter.displayWorld();
+                for(String str: statsClicked){
+                    try{
+                        // gets the qualified name
+                        String qualifiedName = myPackage.toString() + "." + str;
+                        // gets class using qualified name
+                        Class<Critter> new_class = (Class<Critter>) Class.forName(qualifiedName);
+                        // get the correct method from the class
+                        Method m = new_class.getMethod("runStats", List.class);
+                        // Invoke the method on the current critter then enter params
+                        m.invoke(new_class, Critter.getInstances(str));
+                    }
+                    catch (Exception e){
+                        System.out.println("Error Processing: ");
+                    }//catch
+                }
+            }
+        });
+        //animate
+
+        Slider slider = new Slider(1, 100, 1);
+        slider.setShowTickMarks(true);
+        slider.setShowTickLabels(true);
+        slider.setMajorTickUnit(10);
+        slider.setBlockIncrement(1);
+
+        Timeline animateWorld = new Timeline(
+                new KeyFrame(Duration.millis(200), event -> {
+
+                    for(int i=0; i< slider.getValue(); i++) {
+                        Critter.worldTimeStep();
+                    }
+                    Critter.displayWorld();
+                    for (String str : statsClicked) {
+                        try {
+                            // gets the qualified name
+                            String qualifiedName = myPackage.toString() + "." + str;
+                            // gets class using qualified name
+                            Class<Critter> new_class = (Class<Critter>) Class.forName(qualifiedName);
+                            // get the correct method from the class
+                            Method m = new_class.getMethod("runStats", List.class);
+                            // Invoke the method on the current critter then enter params
+                            m.invoke(new_class, Critter.getInstances(str));
+                        } catch (Exception e) {
+                            System.out.println("Error Processing: ");
+                        }//catch
+                    }
+                })
+        );
+
+        animateWorld.setCycleCount(Animation.INDEFINITE);
+        ToggleButton animate = new ToggleButton("start");
+
+        animate.setOnAction(event -> {
+            if (animate.isSelected()) {
+                stats.setDisable(true);
+                step.setDisable(true);
+                statsBox.setDisable(true);
+                makeChoice.setDisable(true);
+                make.setDisable(true);
+                slider.setDisable(true);
+                animateWorld.play();
+            } else {
+                animateWorld.stop();
+                stats.setDisable(false);
+                step.setDisable(false);
+                statsBox.setDisable(false);
+                makeChoice.setDisable(false);
+                make.setDisable(false);
+                slider.setDisable(false);
+            }
+        });
+
 
         Button quit = new Button("Quit");
         quit.setOnAction(new EventHandler<ActionEvent>() {
@@ -329,11 +393,13 @@ public class Main extends Application {
             }
         });
 
-        fp.getChildren().add(show);
+       // fp.getChildren().add(show);
         fp.getChildren().add(stats);
         fp.getChildren().add(step);
-        fp.getChildren().add(makeChoice);
+        fp.getChildren().add(animate);
+        fp.getChildren().add(slider);
         fp.getChildren().add(statsBox);
+        fp.getChildren().add(makeChoice);
         fp.getChildren().add(make);
         fp.getChildren().add(quit);
         rootPane.setRight(gp);

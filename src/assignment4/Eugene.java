@@ -8,6 +8,9 @@ package assignment4;
  * pyj82
  * 15470
  */
+
+import javafx.scene.paint.Color;
+
 /** This Critter randomly chooses a direction at its creation then only ever goes diagonally or straight(North, South,
  *  East, West) depending
  * the direction it originally choose.
@@ -90,8 +93,11 @@ public class Eugene extends Critter {
     }
 
     @Override
-    public CritterShape viewShape() { return CritterShape.SQUARE; }
+    public CritterShape viewShape() { return CritterShape.CIRCLE; }
 
     @Override
-    public javafx.scene.paint.Color viewOutlineColor() { return javafx.scene.paint.Color.BLUE; }
+    public javafx.scene.paint.Color viewOutlineColor() { return Color.BROWN; }
+
+    @Override
+    public javafx.scene.paint.Color viewFillColor() { return Color.BROWN; }
 }

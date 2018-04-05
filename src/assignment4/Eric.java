@@ -8,6 +8,9 @@ package assignment4;
  * pyj82
  * 15470
  */
+
+import javafx.scene.paint.Color;
+
 /**Eric will always move diagonally, except for the first step where he can only move down or to the sides.
  *Eric will always fight
  * Will rarely reproduce
@@ -85,8 +88,11 @@ public class Eric extends Critter {
     }
 
     @Override
-    public CritterShape viewShape() { return CritterShape.SQUARE; }
+    public CritterShape viewShape() { return CritterShape.STAR; }
 
     @Override
-    public javafx.scene.paint.Color viewOutlineColor() { return javafx.scene.paint.Color.BLUE; }
+    public javafx.scene.paint.Color viewOutlineColor() { return Color.BLUEVIOLET; }
+
+    @Override
+    public javafx.scene.paint.Color viewFillColor() { return Color.BLUEVIOLET; }
 }
