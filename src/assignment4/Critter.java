@@ -657,6 +657,7 @@ public abstract class Critter {
         // get the arraylist of critters
         // print the top row
         Main.gp.getChildren().clear();
+        Main.gp.setGridLinesVisible(true);
         // for loop for row
         for(int c = 0; c< Params.world_height; c++){
             // Get array of critters on the row
@@ -716,8 +717,14 @@ public abstract class Critter {
         }
         return true;
     }
-    static int shs =7;
     private static Shape createShape(CritterShape s){
+        double shs;
+        if (1200/Params.world_width <995/Params.world_height){
+            shs=1200/Params.world_width/6;
+        }
+        else {
+            shs =995/Params.world_height/6;
+        }
         Shape newShape;
         switch (s){
             case SQUARE:

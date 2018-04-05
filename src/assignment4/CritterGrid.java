@@ -1,8 +1,10 @@
 package assignment4;
 
 import javafx.application.Application;
+import javafx.geometry.HPos;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
@@ -60,17 +62,25 @@ public class CritterGrid {
         //grid.getRowConstraints().add(new RowConstraints(gridHeight));
     //    Main.gp.getColumnConstraints().add(new ColumnConstraints(Params.world_width));
       //  Main.gp.getRowConstraints().add(new RowConstraints(Params.world_height));
-        Main.gp.setGridLinesVisible(true);
 
+        double col = 1200/Params.world_width;
+        double rw = 995/Params.world_height;
         for(int i = 0; i < Params.world_width; i++) {
-            ColumnConstraints column = new ColumnConstraints(40);
+            ColumnConstraints column = new ColumnConstraints(col);
+           // column.setPercentWidth(100/Params.world_width);
+            //column.setFillWidth(true);
+            //column.setHgrow(Priority.ALWAYS);
             Main.gp.getColumnConstraints().add(column);
         }
 
         for(int i = 0; i < Params.world_height; i++) {
-            RowConstraints row = new RowConstraints(40);
+            RowConstraints row = new RowConstraints(rw);
+            //row.setPercentHeight(100/Params.world_height);
+            //row.setFillHeight(true);
+           // row.setVgrow(Priority.ALWAYS);
             Main.gp.getRowConstraints().add(row);
         }
+        Main.gp.setGridLinesVisible(true);
 
    //     Circle s = new Circle(10);
    //     s.setFill(javafx.scene.paint.Color.RED);

@@ -226,13 +226,57 @@ public class Main extends Application {
        CritterGrid.createGrid();
         // Step
         gp.setGridLinesVisible(true);
+
+        ArrayList<String> names = new ArrayList<String>();
+        File dir = new File("C:\\Users\\Prajakta Joshi\\IdeaProjects\\Project4_er29242_pyj82\\src\\assignment4");
+        File[] listOfFiles = dir.listFiles();
+        try{
+
+            for (File file :listOfFiles) {
+                if (file.isFile() &&file.getName().endsWith(".java")) {
+                    String classname = file.getName().substring(0,file.getName().length()-5);
+
+                    if(classname.equals("MyCritter7")){
+                        //dont add to the list, not a critter class
+                    }
+                    else if(classname.equals("MyCritter6")){
+                        //dont
+                    }
+                    else if(classname.equals("MyCritter1")){
+                        //dont
+                    }
+                    else if(classname.equals("Main")){
+                        //dont
+                    }
+                    else if(classname.equals("InvalidCritterException")){
+                        //dont
+                    }
+                    else if(classname.equals("Header")){
+                        //dont
+                    }
+                    else if(classname.equals("CritterGrid")){
+
+                    }
+                    else if(classname.equals("Params")){
+
+                    }
+                    else if(classname.equals("Critter")){
+
+                    }
+                    else {
+                        names.add(classname);
+                    }
+                }
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+
         ChoiceBox makeChoice = new ChoiceBox<>();
-        makeChoice.getItems().add("Craig");
-        makeChoice.getItems().add("Eugene");
-        makeChoice.getItems().add("Elise");
-        makeChoice.getItems().add("Reagan");
-        makeChoice.getItems().add("Eric");
-        makeChoice.getItems().add("Algae");
+        makeChoice.getItems().addAll(names);
 
         javafx.scene.control.TextField makeNum = new javafx.scene.control.TextField("1");
 
@@ -405,7 +449,7 @@ public class Main extends Application {
                 System.exit(0);
             }
         });
-
+        gp.setGridLinesVisible(true);
        // fp.getChildren().add(show);
         fp.getChildren().add(stats);
         fp.getChildren().add(step);
