@@ -39,6 +39,7 @@ public class Eric extends Critter {
      * @return True
      */
     public boolean fight(String not_used) {
+        look(3, true);
         return true;
     }
 

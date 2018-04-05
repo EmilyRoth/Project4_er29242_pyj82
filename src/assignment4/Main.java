@@ -67,156 +67,7 @@ public class Main extends Application {
      */
     public static void main(String[] args) {
         Application.launch(args);
-        if (args.length != 0) {
-            try {
-                inputFile = args[0];
-                kb = new Scanner(new File(inputFile));			
-            } catch (FileNotFoundException e) {
-                System.out.println("USAGE: java Main OR java Main <input file> <test output>");
-                e.printStackTrace();
-            } catch (NullPointerException e) {
-                System.out.println("USAGE: java Main OR java Main <input file>  <test output>");
-            }
-            if (args.length >= 2) {
-                if (args[1].equals("test")) { // if the word "test" is the second argument to java
-                    // Create a stream to hold the output
-                    testOutputString = new ByteArrayOutputStream();
-                    PrintStream ps = new PrintStream(testOutputString);
-                    // Save the old System.out.
-                    old = System.out;
-                    // Tell Java to use the special stream; all console output will be redirected here from now
-                    System.setOut(ps);
-                }
-            }
-        } else { // if no arguments to main
-            kb = new Scanner(System.in); // use keyboard and console
-        }
-        /* Do not alter the code above for your submission. */
-        /* Write your code below. */
-        // set up the world or critter object
-        String input = kb.nextLine();
-        //gets rid of beginning and ending whitespace
-        input =input.trim();
-        // starts loop to keep world going until quit
-        while(!input.equals("quit")){
-            // process commands
-            String[] arguments = input.split("\\s+");
-            String command = arguments[0];
-            // parse and put into positions
-            switch (command){
-                // Shows the world
-                case "show":
-                    if(arguments.length == 1) {
-                        Critter.displayWorld();
-                    }
-                    else {
-                        System.out.println("Error Processing: "+ input);
-                    }
-                    break;
-
-                // Determines how many time steps to run
-                case "step":
-                    if(arguments.length == 1){
-                        Critter.worldTimeStep();
-                    }
-                    else if(arguments.length ==2){
-                        int numOfTimes =0;
-                        try {
-                            numOfTimes = Integer.parseInt(arguments[1]);
-                        }
-                        catch (Exception e){
-                            System.out.println("Error Processing: "+ input);
-                        }
-                        for(int i = 0; i< numOfTimes; i++){
-                            Critter.worldTimeStep();
-                        }
-                    }
-                    else {
-                        System.out.println("Error Processing: "+ input);
-                    }
-                    break;
-
-                // Set random number seed
-                case "seed":
-                    if(arguments.length == 2){
-                        try {
-                            int seed = Integer.parseInt(arguments[1]);
-                            Critter.setSeed(seed);
-                        }
-                        catch (Exception e){
-                            System.out.println("Error Processing: "+ input);
-                        }
-                    }
-                    else{
-                        System.out.println("Error Processing: "+ input);
-                    }
-                    break;
-                //make given number of critters in given class
-                case "make":
-                    if(arguments.length >= 2){
-                        String critterClass = arguments[1];
-                        int numOfCritters = 1; // default amount
-                        if(arguments.length == 3){
-                            try {
-                                numOfCritters = Integer.parseInt(arguments[2]);
-                            }
-                            catch (Exception e){
-                                System.out.println("Error Processing: "+ input);
-                            }//catch
-                        }// if
-                        try{
-                            for(int i =0; i< numOfCritters; i++) {
-
-                                Critter.makeCritter(critterClass); // passes to model
-                            }//for
-                        }//try
-                        catch (Exception e){
-                            System.out.println("Error Processing: "+ input);
-                            break;
-                        }//catch
-                    }// if
-                    else{
-                        System.out.println("Error Processing: "+ input);
-                    }//else
-                    break;
-                // displays stats
-                case "stats":
-                    if(arguments.length == 2){
-                        try{
-                            // gets the qualified name
-                            String qualifiedName = myPackage.toString() + "." + arguments[1];
-                            // gets class using qualified name
-                            Class<Critter> new_class = (Class<Critter>) Class.forName(qualifiedName);
-                            // get the correct method from the class
-                            Method m = new_class.getMethod("runStats", List.class);
-                            // Invoke the method on the current critter then enter params
-                            m.invoke(new_class, Critter.getInstances(arguments[1]));
-                        }
-                        catch (Exception e){
-                            System.out.println("Error Processing: "+ input);
-                        }//catch
-                    }// if
-                    else{
-                        // not correct amout of args
-                        System.out.println("Error Processing: " + input);
-                    }//else
-                    break;
-                // Quits the program
-                case "quit":
-                    System.out.println("Error Processing: "+ input);
-                    break;
-                // Invalid option picked
-                default:
-                    System.out.println("Invalid Command: "+command);
-                    break;
-            }//switch
-            // get new input
-            input = kb.nextLine();
-            input =input.trim();
-        } // while loop
-        /* Write your code above */
-        System.out.flush();
-    }
+          }
 
     // where the application actually starts
     @Override
@@ -231,10 +82,9 @@ public class Main extends Application {
          *  find all critters, sets arraylist of strings to all critter names
          */
         ArrayList<String> names = new ArrayList<String>();
-        File dir = new File("C:\\Users\\Prajakta Joshi\\IdeaProjects\\Project4_er29242_pyj82\\src\\assignment4");
+        File dir = new File("C:\\Users\\Emily\\IdeaProjects\\Project4_er29242_pyj82\\src\\assignment4");
         File[] listOfFiles = dir.listFiles();
         try{
-
             for (File file :listOfFiles) {
                 if (file.isFile() &&file.getName().endsWith(".java")) {
                     String classname = file.getName().substring(0,file.getName().length()-5);
@@ -363,6 +213,7 @@ public class Main extends Application {
                 System.out.println("Step button");
                 Critter.worldTimeStep();
                 Critter.displayWorld();
+                String statsOut = "";
                 for(String str: statsClicked){
                     try{
                         // gets the qualified name
@@ -372,12 +223,14 @@ public class Main extends Application {
                         // get the correct method from the class
                         Method m = new_class.getMethod("runStats", List.class);
                         // Invoke the method on the current critter then enter params
-                        m.invoke(new_class, Critter.getInstances(str));
+                        Object value = m.invoke(new_class, Critter.getInstances(str));
+                        statsOut = statsOut + "\n" +(String) value;
                     }
                     catch (Exception e){
                         System.out.println("Error Processing: ");
                     }//catch
                 }
+                runStats.setText(statsOut);
             }
         });
         /**
@@ -390,11 +243,11 @@ public class Main extends Application {
 
         Timeline animateWorld = new Timeline(
                 new KeyFrame(Duration.millis(200), event -> {
-
                     for(int i=0; i< slider.getValue(); i++) {
                         Critter.worldTimeStep();
                     }
                     Critter.displayWorld();
+                    String statsOut = "";
                     for (String str : statsClicked) {
                         try {
                             // gets the qualified name
@@ -405,13 +258,13 @@ public class Main extends Application {
                             Method m = new_class.getMethod("runStats", List.class);
                             // Invoke the method on the current critter then enter params
                             Object value = m.invoke(new_class, Critter.getInstances(str));
-                            stringStats[0] = (String) value;
-                            System.out.println("Try");
-                            runStats.setText((String) value);
+                            statsOut = statsOut + "\n" +(String) value;
+                           // runStats.setText((String) value);
                         } catch (Exception e) {
                             System.out.println("Error Processing: ");
                         }//catch
                     }
+                    runStats.setText(statsOut);
                 })
         );
 

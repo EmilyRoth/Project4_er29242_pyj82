@@ -674,28 +674,19 @@ public abstract class Critter {
             }
             for(int r = 0; r<Params.world_width; r++){
                 // check if there's a critter there
-                String filler = " ";
                 // method to check if theres a critter there
                 for(Critter sameHeightCritters : sameHeight){
                     if(sameHeightCritters.x_coord == r){
-                        filler = sameHeightCritters.toString();
                         Shape s = createShape(sameHeightCritters.viewShape());
                         s.setFill(sameHeightCritters.viewFillColor());
                         s.setStroke(sameHeightCritters.viewOutlineColor());
                         Main.gp.add(s, r, c);
                     }
                 } // find if theres something
-                System.out.print(filler);
             }
             // print the end of the row
-            System.out.println("|");
         }
-        // print the bottom row
-        System.out.print("+");
-        for(int i = 0; i<Params.world_width; i++){
-            System.out.print("-");
-        }
-        System.out.println("+");
+
     }
 
 
@@ -781,17 +772,17 @@ public abstract class Critter {
 
             // see if critter is in a fight or not
 
-           if(notOccupied(newX, newY)){
-               // able to run
-               return null;
-           }else{
-                // is occupied
-               // to string for critter in that location
-           }
+            for(Critter crit : population){
+                if(crit.x_coord == newX && crit.y_coord == newY){
+                    return crit.toString();
+                }
+            }
+            return null;
 
         } // if critter has not moved
 
-        return "";}
+        return "";
+    }
     //If the location is
     //unoccupied, then look returns null. If the location is occupied, then look returns the
     //toString() result for the Critter in that location. In either case, the critter invoking
