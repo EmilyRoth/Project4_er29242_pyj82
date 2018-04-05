@@ -21,14 +21,13 @@ import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.awt.*;
+import java.awt.Label;
+import java.awt.TextField;
 import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -235,6 +234,8 @@ public class Main extends Application {
         makeChoice.getItems().add("Eric");
         makeChoice.getItems().add("Algae");
 
+        javafx.scene.control.TextField makeNum = new javafx.scene.control.TextField("1");
+
         Button make = new Button("Make");
         make.setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -243,7 +244,16 @@ public class Main extends Application {
                 System.out.println("Make button");
                 String critterSelection = (String) makeChoice.getValue();
                 try{
-                        Critter.makeCritter(critterSelection); // passes to model
+                        int numCrit =0;
+                        try{
+                            numCrit = Integer.parseInt(makeNum.getText());
+                        }
+                        catch (Exception e){
+                            System.out.println("not a number");
+                        }
+                        for(int i=0; i< numCrit;i++) {
+                            Critter.makeCritter(critterSelection); // passes to model
+                        }
                         Critter.displayWorld();
 
                 }//try
@@ -252,6 +262,11 @@ public class Main extends Application {
                 }//catch
             }
         });
+
+        HBox makeBox = new HBox();
+        makeBox.getChildren().add(makeNum);
+        makeBox.getChildren().add(makeChoice);
+        makeBox.getChildren().add(make);
 
         // checkbox for run stats
         final String[] statsOptions = new String[]{"Craig", "Eugene", "Elise", "Reagan", "Eric", "Algae"};
@@ -332,8 +347,6 @@ public class Main extends Application {
         //animate
 
         Slider slider = new Slider(1, 100, 1);
-        slider.setShowTickMarks(true);
-        slider.setShowTickLabels(true);
         slider.setMajorTickUnit(10);
         slider.setBlockIncrement(1);
 
@@ -399,8 +412,7 @@ public class Main extends Application {
         fp.getChildren().add(animate);
         fp.getChildren().add(slider);
         fp.getChildren().add(statsBox);
-        fp.getChildren().add(makeChoice);
-        fp.getChildren().add(make);
+        fp.getChildren().add(makeBox);
         fp.getChildren().add(quit);
         rootPane.setRight(gp);
         rootPane.setLeft(fp);
