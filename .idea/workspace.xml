@@ -7,13 +7,17 @@
   <component name="ChangeListManager">
     <list default="true" id="c78e1c0b-9dd0-4302-b8df-32b91362bc53" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Craig.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Craig.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter$TestCritter.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter$TestCritter.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Critter.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Elise.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Elise.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eric.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eric.class" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eugene.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Eugene.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Main.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Main.class" />
       <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Params.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Params.class" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Critter.java" afterPath="$PROJECT_DIR$/src/assignment4/Critter.java" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Reagan.class" afterPath="$PROJECT_DIR$/out/production/Project4_er29242_pyj82/assignment4/Reagan.class" />
       <change beforePath="$PROJECT_DIR$/src/assignment4/CritterGrid.java" afterPath="$PROJECT_DIR$/src/assignment4/CritterGrid.java" />
       <change beforePath="$PROJECT_DIR$/src/assignment4/Main.java" afterPath="$PROJECT_DIR$/src/assignment4/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/assignment4/Params.java" afterPath="$PROJECT_DIR$/src/assignment4/Params.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,8 +65,8 @@
       <file leaf-file-name="Reagan.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Reagan.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2499">
-              <caret line="121" column="4" lean-forward="false" selection-start-line="121" selection-start-column="4" selection-end-line="122" selection-end-column="93" />
+            <state relative-caret-position="2478">
+              <caret line="120" column="4" lean-forward="false" selection-start-line="120" selection-start-column="4" selection-end-line="121" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -71,13 +75,13 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1890">
-              <caret line="338" column="41" lean-forward="true" selection-start-line="338" selection-start-column="41" selection-end-line="338" selection-end-column="41" />
+            <state relative-caret-position="-313">
+              <caret line="459" column="23" lean-forward="false" selection-start-line="459" selection-start-column="23" selection-end-line="459" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#9274#9282#0" expanded="true" />
-                <element signature="e#18013#18014#0" expanded="true" />
-                <element signature="e#18059#18060#0" expanded="true" />
+                <element signature="e#9403#9411#0" expanded="true" />
+                <element signature="e#17535#17536#0" expanded="true" />
+                <element signature="e#17581#17582#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,8 +102,8 @@
       <file leaf-file-name="CritterGrid.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/CritterGrid.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="805">
-              <caret line="66" column="43" lean-forward="false" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="43" />
+            <state relative-caret-position="-189">
+              <caret line="42" column="7" lean-forward="false" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -110,8 +114,8 @@
       <file leaf-file-name="Elise.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Elise.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2100">
-              <caret line="102" column="76" lean-forward="false" selection-start-line="102" selection-start-column="76" selection-end-line="102" selection-end-column="76" />
+            <state relative-caret-position="2079">
+              <caret line="101" column="76" lean-forward="false" selection-start-line="101" selection-start-column="76" selection-end-line="101" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -121,7 +125,7 @@
         <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="805">
-              <caret line="84" column="73" lean-forward="false" selection-start-line="84" selection-start-column="73" selection-end-line="84" selection-end-column="73" />
+              <caret line="85" column="73" lean-forward="false" selection-start-line="85" selection-start-column="73" selection-end-line="85" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -130,11 +134,11 @@
       <file leaf-file-name="Critter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1050">
-              <caret line="658" column="7" lean-forward="false" selection-start-line="658" selection-start-column="7" selection-end-line="658" selection-end-column="7" />
+            <state relative-caret-position="-651">
+              <caret line="663" column="7" lean-forward="false" selection-start-line="663" selection-start-column="7" selection-end-line="663" selection-end-column="7" />
               <folding>
-                <element signature="e#24836#24837#0" expanded="true" />
-                <element signature="e#24909#24910#0" expanded="true" />
+                <element signature="e#28492#28493#0" expanded="true" />
+                <element signature="e#28565#28566#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -166,6 +170,7 @@
       <find>Sys</find>
       <find>system</find>
       <find>runn</find>
+      <find>statsbo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,9 +194,9 @@
         <option value="$PROJECT_DIR$/src/assignment4/Eric.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Craig.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Elise.java" />
-        <option value="$PROJECT_DIR$/src/assignment4/CritterGrid.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Critter.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Params.java" />
+        <option value="$PROJECT_DIR$/src/assignment4/CritterGrid.java" />
         <option value="$PROJECT_DIR$/src/assignment4/Main.java" />
       </list>
     </option>
@@ -271,6 +276,124 @@
       <recent name="C:\Users\Emily\IdeaProjects\Project4_er29242_pyj82\test_sample\assignment4" />
       <recent name="C:\Users\Emily\IdeaProjects\Project4_er29242_pyj82\src\assignment4" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/assignment4/Craig.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/assignment4/Critter.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/assignment4/Elise.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/assignment4/Eric.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/assignment4/Eugene.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/assignment4/Main.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/assignment4/Params.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/assignment4/Reagan.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/assignment4/Hello.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -500,7 +623,14 @@
       <option name="project" value="LOCAL" />
       <updated>1522889415568</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="reads file and resizes">
+      <created>1522965160588</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1522965160588</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -593,7 +723,8 @@
     <MESSAGE value="In the process of animation" />
     <MESSAGE value="animation done" />
     <MESSAGE value="make textbox done" />
-    <option name="LAST_COMMIT_MESSAGE" value="make textbox done" />
+    <MESSAGE value="reads file and resizes" />
+    <option name="LAST_COMMIT_MESSAGE" value="reads file and resizes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -605,7 +736,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/assignment4/Critter.java</url>
-          <line>614</line>
+          <line>619</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
@@ -659,9 +790,9 @@
           <caret line="44" column="53" lean-forward="false" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9274#9282#0" expanded="true" />
-            <element signature="e#18013#18014#0" expanded="true" />
-            <element signature="e#18059#18060#0" expanded="true" />
+            <element signature="e#9403#9411#0" expanded="true" />
+            <element signature="e#17535#17536#0" expanded="true" />
+            <element signature="e#17581#17582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -703,8 +834,8 @@
         <state relative-caret-position="269">
           <caret line="545" column="30" lean-forward="false" selection-start-line="545" selection-start-column="26" selection-end-line="545" selection-end-column="30" />
           <folding>
-            <element signature="e#24836#24837#0" expanded="true" />
-            <element signature="e#24909#24910#0" expanded="true" />
+            <element signature="e#28492#28493#0" expanded="true" />
+            <element signature="e#28565#28566#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -738,8 +869,8 @@
         <state relative-caret-position="19080">
           <caret line="477" column="23" lean-forward="true" selection-start-line="477" selection-start-column="23" selection-end-line="477" selection-end-column="23" />
           <folding>
-            <element signature="e#24836#24837#0" expanded="true" />
-            <element signature="e#24909#24910#0" expanded="true" />
+            <element signature="e#28492#28493#0" expanded="true" />
+            <element signature="e#28565#28566#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -791,9 +922,9 @@
           <caret line="163" column="0" lean-forward="true" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9274#9282#0" expanded="true" />
-            <element signature="e#18013#18014#0" expanded="true" />
-            <element signature="e#18059#18060#0" expanded="true" />
+            <element signature="e#9403#9411#0" expanded="true" />
+            <element signature="e#17535#17536#0" expanded="true" />
+            <element signature="e#17581#17582#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -935,8 +1066,8 @@
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/util/Random.java" />
     <entry file="file://$PROJECT_DIR$/src/assignment4/Reagan.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2499">
-          <caret line="121" column="4" lean-forward="false" selection-start-line="121" selection-start-column="4" selection-end-line="122" selection-end-column="93" />
+        <state relative-caret-position="2478">
+          <caret line="120" column="4" lean-forward="false" selection-start-line="120" selection-start-column="4" selection-end-line="121" selection-end-column="93" />
           <folding />
         </state>
       </provider>
@@ -972,20 +1103,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="19" column="64" lean-forward="false" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Elise.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2100">
-          <caret line="102" column="76" lean-forward="false" selection-start-line="102" selection-start-column="76" selection-end-line="102" selection-end-column="76" />
+        <state relative-caret-position="2079">
+          <caret line="101" column="76" lean-forward="false" selection-start-line="101" selection-start-column="76" selection-end-line="101" selection-end-column="76" />
           <folding />
         </state>
       </provider>
@@ -993,18 +1114,8 @@
     <entry file="file://$PROJECT_DIR$/src/assignment4/Craig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="805">
-          <caret line="84" column="73" lean-forward="false" selection-start-line="84" selection-start-column="73" selection-end-line="84" selection-end-column="73" />
+          <caret line="85" column="73" lean-forward="false" selection-start-line="85" selection-start-column="73" selection-end-line="85" selection-end-column="73" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/assignment4/CritterGrid.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="66" column="43" lean-forward="false" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1018,24 +1129,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Critter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050">
-          <caret line="658" column="7" lean-forward="false" selection-start-line="658" selection-start-column="7" selection-end-line="658" selection-end-column="7" />
+        <state relative-caret-position="-651">
+          <caret line="663" column="7" lean-forward="false" selection-start-line="663" selection-start-column="7" selection-end-line="663" selection-end-column="7" />
           <folding>
-            <element signature="e#24836#24837#0" expanded="true" />
-            <element signature="e#24909#24910#0" expanded="true" />
+            <element signature="e#28492#28493#0" expanded="true" />
+            <element signature="e#28565#28566#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/CritterGrid.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="42" column="7" lean-forward="false" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assignment4/Algae.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="19" column="64" lean-forward="false" selection-start-line="19" selection-start-column="64" selection-end-line="19" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assignment4/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
-          <caret line="338" column="41" lean-forward="true" selection-start-line="338" selection-start-column="41" selection-end-line="338" selection-end-column="41" />
+        <state relative-caret-position="-313">
+          <caret line="459" column="23" lean-forward="false" selection-start-line="459" selection-start-column="23" selection-end-line="459" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#9274#9282#0" expanded="true" />
-            <element signature="e#18013#18014#0" expanded="true" />
-            <element signature="e#18059#18060#0" expanded="true" />
+            <element signature="e#9403#9411#0" expanded="true" />
+            <element signature="e#17535#17536#0" expanded="true" />
+            <element signature="e#17581#17582#0" expanded="true" />
           </folding>
         </state>
       </provider>
